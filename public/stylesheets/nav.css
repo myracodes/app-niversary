@@ -5,5 +5,40 @@
 }
 
 .flex-row > ul > li {
-    padding-right: 20px;
+    padding: 10px;
+    border: solid 1px #00B7FF;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+}
+li:hover {
+    background-color: #00B7FF;
+}
+
+header {
+    background-color: rgb(253, 253, 253);
+
+}
+
+.logo-item {
+    padding: 10px;
+    border: solid 1px #00B7FF;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+}
+.logo-item:hover {
+    background-color: #00B7FF;
+}
+
+.sign-up {
+    padding: 10px;
+    border: solid 1px #00B7FF;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.sign-up:hover {
+    background-color: #00B7FF;
 }

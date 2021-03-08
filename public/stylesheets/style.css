@@ -14,6 +14,7 @@ body {
   padding: 50px;
   font: 14px;
   font-family: 'Poppins', sans-serif;
+  background-color: #cfe9ce;
 }
 
 a {
@@ -22,5 +23,21 @@ a {
 }
 
 a:hover {
-  color: #00B7FF;
+  color: white;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 90px;
+}
+.welcome {
+  color: black;
+  text-align: center;
+  font-size: 50px;
+}
+
+.home-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
 }
