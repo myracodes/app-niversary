@@ -8,16 +8,16 @@ const birthdaySchema = new Schema({
   picture: {
     type: String,
     default:
-      "https://www.nicepng.com/png/detail/73-730154_open-default-profile-picture-png.png",
+      "https://res.cloudinary.com/daax22fpi/image/upload/c_limit,e_blue:0,h_200,q_80,r_8,w_200/a_0/v1615216912/App-niversary/open-default-profile-picture-png_hz8bo3.png",
   },
   gift: [
     {
       type: Schema.Types.ObjectId,
-      ref: "gifts"
+      ref: "gifts",
     },
   ],
 });
 
-const BirthdayModel = mongoose.model("birthdays", userSchema);
+const BirthdayModel = mongoose.model("birthdays", birthdaySchema);
 
 module.exports = BirthdayModel;
