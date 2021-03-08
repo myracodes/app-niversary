@@ -1,8 +1,13 @@
+require("dotenv").config();
+require("./config/mongodb"); // database initial setup
+require("./helpers/hbs"); // utils for hbs templates
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require("mongoose")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
