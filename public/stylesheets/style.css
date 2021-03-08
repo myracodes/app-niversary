@@ -1,8 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+* {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2px;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+a:hover {
   color: #00B7FF;
 }
