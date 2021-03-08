@@ -4,7 +4,7 @@ const BirthdayModel = require('./../models/birthdays');
 const GiftModel = require('./../models/gifts');
 
 // BIRTHDAYS DASHBOARD
-router.get('/dashboard', (req, res, next) => {
+router.get('/birthdays', (req, res, next) => {
     BirthdayModel.find()
         .then((birthdays) => {
             res.render('birthdays.hbs', {
@@ -26,13 +26,16 @@ router.post("/birthday/create", async (req, res, next) => {
     console.log('-------------post create');
     const {
         friendName,
+        friendLastName,
         birthday,
         picture,
         gift
     } = req.body;
+    console.log(req.body);
     try {
         await BirthdayModel.create({
             friendName,
+            friendLastName,
             birthday,
             picture,
             gift

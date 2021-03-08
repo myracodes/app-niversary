@@ -1,0 +1,9 @@
+.flex-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex-row > ul > li {
+    padding-right: 20px;
+}
