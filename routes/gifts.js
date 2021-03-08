@@ -23,7 +23,15 @@ router.get('/gifts/create', (req, res, next)=>{
 })
 
 //here, to post the informaton of the gift
-
+router.post("/gifts/create", (req, res, next)=>{
+    GiftModel.create(req.body)
+    .then(()=>{
+        res.redirect('/gifts')
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})
 
 
 
