@@ -1,0 +1,42 @@
+<div>
+  <header>
+    <nav>
+      <div>
+        <div>
+          <a href="/">
+            <h2 class="logo-item">APP-NIVERSARY</h2>
+          </a>
+        </div>
+        <ul>
+            {{!-- Note: uncomment the #IF when isLoggedIn variable is created --}}
+          {{!-- {{#if isLoggedIn}} --}}
+          <li>
+            <a href="/birthdays">My birthdays</a>
+          </li>
+          <li>
+            <a href="/birthday/create">Create new birthday</a>
+          </li>
+          <li>
+            <a href="/gifts">My gift list</a>
+          </li>
+          <li>
+            <a href="/gifts/create">Create new gift</a>
+          </li>
+          {{!-- {{/if}} --}}
+        </ul>
+      </div>
+      <div>
+        {{#unless isLoggedIn}}
+        <a href="/signup">
+          <span>Sign up</span>
+        </a>
+        {{/unless}}
+        {{#if isLoggedIn}}
+        <a href="/signout">
+          <span>Log out</span>
+        </a>
+        {{/if}}
+      </div>
+    </nav>
+  </header>
+</div>
