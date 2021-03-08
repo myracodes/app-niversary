@@ -23,7 +23,7 @@ router.get("/birthday/create", (req, res, next) => {
 });
 
 router.post("/birthday/create", async (req, res, next) => {
-    console.log('-------------post create');
+    console.log('-------------POST create');
     const {
         friendName,
         friendLastName,
