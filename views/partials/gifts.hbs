@@ -1,12 +1,18 @@
 <h1> LIST OF AVAILABLE GIFTS</h1>
 
+<a href='/gifts/create'>Create New Gift</a>
+
+
 <div class="gifts-list">
     {{#each dbGifts}}
 
+    <img src="{{this.Picture}}" alt="gift-picture">
     <p>{{this.name}}</p>
     <p>{{this.Description}}</p>
-    <p>{{this.Picture}}</p>
+    <a href="#">Update Gift</a>
+    <a href="#">Delete Gift</a>
 
     {{/each}}
 
 </div>
+

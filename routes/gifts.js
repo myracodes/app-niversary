@@ -15,6 +15,16 @@ router.get('/gifts', (req, res, next)=>{
 })
 
 
+//ROUTE TO CREATE A NEW GIFT
+//here, to render the form
+
+router.get('/gifts/create', (req, res, next)=>{
+    res.render('partials/gifts-create.hbs')
+})
+
+//here, to post the informaton of the gift
+
+
 
 
 
