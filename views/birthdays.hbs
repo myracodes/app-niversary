@@ -25,13 +25,15 @@
                             {{this.birthday}}
                         </p>
                     </li>
+                    {{#if this.picture}}
                     <li>
                         <p>
                             <b>Picture: </b>
-                            <img src="{{this.picture}}" alt="friend ficture">
+                            <img class="birthday-picture" src="{{this.picture}}" alt="friend ficture">
                             
                         </p>
                     </li>
+                    {{/if}}
                     <li>
                         <p>
                             <b>Gifts: </b>
