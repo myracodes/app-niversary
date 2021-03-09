@@ -9,37 +9,38 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2px;
+  margin: 0 0 2px 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  background-image: url('./../img/background.jpg');
+  background-size: 100%;
+  color: white;
+}
+
 body {
-  padding: 50px;
+  padding: 40px;
   font: 14px;
-  background-color: #cfe9ce;
+  background-color: rgba(0, 0, 0, 0.26);
 }
 
 a {
-  color: #00B7FF;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: white;
+  color: #00B7FF;
 }
 
-.home-title {
-  text-align: center;
-  font-size: 90px;
-}
-.welcome {
-  color: black;
-  text-align: center;
-  font-size: 50px;
+.full-container {
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.home-message {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 20px;
+.body-container {
+  flex-direction: column;
+  width: 80%;
 }

@@ -1,8 +1,24 @@
-<h1 class="home-title">{{title}}</h1>
-<p class="welcome">Welcome to {{title}}</p>
+<h1>Welcome to {{title}}</h1>
+{{!-- <p class="welcome">{{title}}</p> --}}
 
-<div class="home-message">
-<p> Don't forget your friends birthdays anymore! </p>
-<p> Create gifts wishlists for your friends</p>
-<p> Do not let pass your best friend's birthdays</p>
+{{#unless isLoggedIn}}
+<div>
+    <h2>Welcome to app'niversary!</h2>
+    <p> Don't ever miss your friends' birthdays anymore, and store all your gift ideas at the same place!</p>
+    <div>
+    <a href="/signup">Sign up</a> if you're new or <a href="/signin">sign in</a> if you already have an account!
+    </div>
 </div>
+{{/unless}}
+
+{{#if isLoggedIn}}
+<div>
+    <h2>Welcome back!</h2>
+    <p>We are very happy to see you again!</p>
+    <div>
+    Do you want to look at your <a href="/birthdays">birthdays list</a>?
+    </div>
+</div>
+{{/if}}
+
+

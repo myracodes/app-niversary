@@ -1,34 +1,10 @@
-<div>
-  <header>
-    <nav class="flex-row">
-      <div class="flex-row">
-        <div class="flex-row">
-          <a href="/">
-            <h2 class="logo-item">APP-NIVERSARY</h2>
-          </a>
-        </div>
-        <ul class="flex-row">
-            {{!-- Note: uncomment the #IF when isLoggedIn variable is created --}}
-          {{#if isLoggedIn}}
-          <li>
-            <a href="/birthdays">My birthdays</a>
-          </li>
-          <li>
-            <a href="/birthday/create">Create new birthday</a>
-          </li>
-          <li>
-            <a href="/gifts">My gift list</a>
-          </li>
-          <li>
-            <a href="/gifts/create">Create new gift</a>
-          </li>
-          {{/if}}
-        </ul>
-      </div>
-      <div class="flex-row">
-        {{#unless isLoggedIn}}
-        <a href="">
-          <a href="/signin">
+<header>
+  <div id="navbar">
+    <div id="logo">
+      <a href="/"><img src="/img/bdcake.png" alt="logo-link-to-home"></a>
+      {{#unless isLoggedIn}}
+      <a href="">
+        <a href="/signin">
           <span class="sign-up">Sign in</span>
         </a>
         <a href="/signup">
@@ -40,7 +16,23 @@
           <span>Log out</span>
         </a>
         {{/if}}
-      </div>
-    </nav>
-  </header>
-</div>
+      <ul>
+        {{#if isLoggedIn}}
+        {{!-- ici ajouter nom user + photo de profil --}}
+        <li>
+          <a href="/birthdays">My birthdays</a>
+        </li>
+        <li>
+          <a href="/birthday/create">Create new birthday</a>
+        </li>
+        <li>
+          <a href="/gifts">My gift list</a>
+        </li>
+        <li>
+          <a href="/gifts/create">Create new gift</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</header>

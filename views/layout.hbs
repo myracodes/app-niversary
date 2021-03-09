@@ -7,12 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title>App-niversary! ☺</title>
-  {{!-- {{title}} --}}
 </head>
 
 <body>
-  {{> nav}}
-  {{{body}}}
+  <div class="full-container">
+    <div class="nav-container">
+      {{> nav}}
+    </div>
+    <div class="body-container">
+      {{{body}}}
+    </div>
+  </div>
+  {{> footer}}
 </body>
 
 </html>
