@@ -7,7 +7,7 @@ const fileUploader = require('./../config/cloudinary');
 
 // BIRTHDAYS DASHBOARD
 router.get('/birthdays', (req, res, next) => {
-    BirthdayModel.find().populate("gift")
+    BirthdayModel.find().populate("gifts")
         .then((birthdays) => {
             res.render('birthdays.hbs', {
                 birthdays
@@ -89,15 +89,19 @@ router.post('/birthday/:id/delete', (req, res, next) => {
 
 
 //SPECIFIC BIRTHDAY DETAILS
-router.get("/birthday/details/:id", (req, res, next) => {
-  BirthdayModel.findById(req.params.id).populate("gift")
-    .then((birthday) => {
-      res.render("birthday_details.hbs", { birthday });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
+router.get(
+  "/birthday/details/:id",
+  (req, res, next) => {
+    BirthdayModel.findById(req.params.id)
+      .populate("gifts")
+      .then((birthday) => {
+        res.render("birthday_details.hbs", { birthday });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+);
 
 
 

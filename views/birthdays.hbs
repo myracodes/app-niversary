@@ -34,24 +34,21 @@
                         </p>
                     </li>
                     {{!-- {{/if}} --}}
-                    <li>
-                        <p>
-            
-                            <b>Gifts: </b>
-                            {{#each this}}
-                            {{this.name}}
-                            {{/each}}
-                        </p>
-                    </li>
-                    <li>
-                        <p>
                     
-                            <b>TEST </b>
+                      {{!-- <li>
+                        
+                            <b> Gifts: </b>
                             {{#each gifts}}
-                            {{this}}
+                            {{#each this}}
+
+                               {{this.name}}<br>
+                               {{this.price}}
+
+
                             {{/each}}
-                        </p>
-                    </li>
+                            {{/each}}
+                        </li> --}}
+                    
                 </ul>
             </span>
             <form action="/birthday/details/{{this.id}}" method="GET">
