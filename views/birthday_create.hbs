@@ -22,19 +22,24 @@
       <label for="picture">Picture (optional)</label>
       <input name="picture" id="picture" type="file">
     </div>
-    {{!-- <div>
-      <label for="gift">Create a new gift</label>
-      <input name="gift" id="gift" type="text" placeholder="type something here...">
-    </div> --}}
+  
     {{!-- <div>
       <label for="gift">Gift(s)</label>
       <select name="gift" id="gift"></select>
       <option value="-1">Choose a gift</option>
     </div> --}}
-    {{!-- <div>
-      <label for="existing-gifts">Gift(s)</label>
-      {{> gifts_select}}
-    </div> --}}
+    <div>
+      <select name="gifts" id="select-gifts" multiple>
+        {{#each gifts}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{!-- <div>
+          <input type="checkbox" id="{{this.name}}" name="{{this.name}}" checked>
+          <label for="{{this.name}}">{{this.name}}</label>
+        </div> --}}
+        {{/each}}
+      </select>
+    </div>
+
     <button class="form-button">
       Save this birthday!
     </button>

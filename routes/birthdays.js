@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const BirthdayModel = require('./../models/birthdays');
-// const GiftModel = require('./../models/gifts');
+const GiftModel = require('./../models/gifts');
 const fileUploader = require('./../config/cloudinary');
+
 
 // BIRTHDAYS DASHBOARD
 router.get('/birthdays', (req, res, next) => {
-    BirthdayModel.find()
+    BirthdayModel.find().populate("gift")
         .then((birthdays) => {
             res.render('birthdays.hbs', {
                 birthdays
@@ -19,8 +20,12 @@ router.get('/birthdays', (req, res, next) => {
 
 // CREATE BIRTHDAY
 router.get("/birthday/create", (req, res, next) => {
-    res.render("birthday_create.hbs");
-    console.log('-------------post create GET');
+    GiftModel.find()
+    .then((gifts)=>{
+    res.render("birthday_create.hbs", {gifts});
+    })
+    .catch((error)=>{console.log(error);})
+    // console.log('-------------post create GET');
 });
 
 router.post("/birthday/create", fileUploader.single('picture'), async (req, res, next) => {
@@ -32,6 +37,7 @@ router.post("/birthday/create", fileUploader.single('picture'), async (req, res,
     else newBirthday.picture = req.file.path;
     try {
         await BirthdayModel.create(newBirthday);
+        console.log(newBirthday);
         console.log("birthday successfully created :D");
         res.redirect("/birthdays");
     } catch (err) {
@@ -80,6 +86,20 @@ router.post('/birthday/:id/delete', (req, res, next) => {
             console.log(err)
         });
 });
+
+
+//SPECIFIC BIRTHDAY DETAILS
+router.get("/birthday/details/:id", (req, res, next) => {
+  BirthdayModel.findById(req.params.id).populate("gift")
+    .then((birthday) => {
+      res.render("birthday_details.hbs", { birthday });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+
 
 
 module.exports = router;
