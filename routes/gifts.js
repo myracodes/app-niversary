@@ -42,7 +42,8 @@ router.post("/gifts/create", fileUploader.single("Picture"), (req, res, next)=>{
 
 //ROUTE TO UPDATE GIFT
 //first, we get the form with the ID of the gift and its values
-router.get("/gifts/update/:id", (req, res, next)=>{
+router.get("/gifts/update/:id",(req, res, next)=>{
+    
     GiftModel.findById(req.params.id)
     .then((dbGifts)=>{
         res.render("partials/gifts_update", {dbGifts})
@@ -52,9 +53,11 @@ router.get("/gifts/update/:id", (req, res, next)=>{
     })
 })
 //Now we'll post the information updated
-router.post("/gifts/update/:id", (req, res, next)=>{
+router.post("/gifts/update/:id", fileUploader.single("Picture"), (req, res, next)=>{
     console.log("-------RENTRE DANS UPDATE---------");
-    GiftModel.findByIdAndUpdate(req.params.id, req.body)
+    const giftToUpdate = {...req.body};
+    if (req.file) giftToUpdate.Picture = req.file.path;
+    GiftModel.findByIdAndUpdate(req.params.id, giftToUpdate)
     .then(()=>{
         res.redirect("/gifts");
     })
@@ -75,6 +78,17 @@ router.post("/gifts/delete/:id", (req, res, next) => {
       console.log(error);
     });
 });
+
+// ROUTE TO SEE THE DETAILS OF A SPECIFIC GIFT
+router.get('/gifts/details/:id', (req, res, next)=>{
+    GiftModel.findById(req.params.id)
+    .then((gift)=>{
+        res.render("partials/gift_details.hbs", {gift})
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})
 
 
 

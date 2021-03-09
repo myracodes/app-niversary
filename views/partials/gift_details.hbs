@@ -1,0 +1,16 @@
+<h1>{{gift.name}} Details</h1>
+
+<a href="/gifts">See the list of Gifts</a>
+<a href="/">Back Home</a>
+
+<p>PRICE: {{gift.price}}</p>
+<p>DESCRIPTION: {{gift.Description}}</p>
+<img src="{{gift.Picture}}" alt="gift-image">
+<p>PURCHASE LINK: <a href="{{gift.purchaseLink}}" target="blank">{{gift.purchaseLink}}</a></p>
+
+
+
+
+<form action="/gifts/delete/{{gift.id}}" method="POST">
+    <button>Delete Gift</button>
+</form>
