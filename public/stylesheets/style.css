@@ -1,4 +1,5 @@
 @import './nav.css';
+@import './form.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* font-family: 'Poppins', sans-serif; */
@@ -8,12 +9,12 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 2px;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   padding: 50px;
   font: 14px;
-  font-family: 'Poppins', sans-serif;
   background-color: #cfe9ce;
 }
 
