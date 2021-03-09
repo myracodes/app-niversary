@@ -25,7 +25,7 @@
                             {{this.birthday}}
                         </p>
                     </li>
-                    {{#if this.picture}}
+                    {{!-- {{#if this.picture}} --}}
                     <li>
                         <p>
                             <b>Picture: </b>
@@ -33,7 +33,7 @@
 
                         </p>
                     </li>
-                    {{/if}}
+                    {{!-- {{/if}} --}}
                     <li>
                         <p>
                             <b>Gifts: </b>
@@ -42,7 +42,7 @@
                     </li>
                 </ul>
             </span>
-            <form action="/birthday/{{this.id}}/edit" method="POST">
+            <form action="/birthday/{{this.id}}/edit" method="GET">
                 <button>Edit</button>
             </form>
             <form action="/birthday/{{this.id}}/delete" method="POST">

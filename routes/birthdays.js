@@ -42,17 +42,43 @@ router.post("/birthday/create", fileUploader.single('picture'), async (req, res,
 
 // UPDATE BIRTHDAY
 router.get("/birthday/:id/edit", (req, res, next) => {
-    res.render("birthday_edit.hbs");
+    BirthdayModel.findByIdAndUpdate(req.params.id)
+        .then((birthday) => {
+            res.render("birthday_edit.hbs", birthday);
+        })
+        .catch((err) => {
+            console.log(err)
+        });
+});
+
+router.post("/birthday/:id/edit", fileUploader.single('picture'), (req, res, next) => {
+    const newBirthday = {
+        ...req.body
+    };
+    if (!req.file) newBirthday.picture = undefined;
+    else newBirthday.picture = req.file.path;
+    BirthdayModel.findByIdAndUpdate(req.params.id, req.body)
+        .then(() => {
+            console.log('UPDATE SUCCESSFUL');
+            res.redirect("/birthdays");
+        })
+        .catch((err) => {
+            res.render('/birthday/:id/edit');
+            console.log('ERROR WITH THE UPDATE');
+            console.log(err)
+        });
 });
 
 // DELETE BIRTHDAY
 router.post('/birthday/:id/delete', (req, res, next) => {
     BirthdayModel.findByIdAndDelete(req.params.id)
-    .then(() => {
-        console.log('birthday card deleted');
-        res.redirect('/birthdays');
-    })
-    .catch((err) => {console.log(err)});
+        .then(() => {
+            console.log('birthday card deleted');
+            res.redirect('/birthdays');
+        })
+        .catch((err) => {
+            console.log(err)
+        });
 });
 
 

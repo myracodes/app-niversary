@@ -1,8 +1,44 @@
-
-
+<h2>Edit this birthday</h2>
+<div id="create-birthday-form">
+    <form action="/birthday/{{id}}/edit" method="POST" enctype="multipart/form-data">
+        <h3>Add a new birthday to your dashboard!</h3>
+        <div class="form-div">
+            <label for="friendName">Name</label>
+            <input name="friendName" id="friendName" type="text" value="{{this.friendName}}">
+        </div>
+        <div class="form-div">
+            <label for="friendLastName">Last name</label>
+            <input name="friendLastName" id="friendLastName" type="text" value="{{this.friendLastName}}">
+        </div>
+        <div class="form-div">
+            <label for="birthday">Birthday date</label>
+            <input name="birthday" id="birthday" type="date" value="{{this.birthday}}">
+        </div>
+        <div class="form-div">
+            <label for="picture">Picture (optional)</label>
+            <input name="picture" id="picture" type="file">
+        </div>
+        {{!-- <div>
+            <label for="gift">Create a new gift</label>
+            <input name="gift" id="gift" type="text" value="{{this.}}">
+        </div> --}}
+        {{!-- <div>
+            <label for="gift">Gift(s)</label>
+            <select name="gift" id="gift"></select>
+            <option value="-1">Choose a gift</option>
+        </div> --}}
+        {{!-- <div>
+            <label for="existing-gifts">Gift(s)</label>
+            {{> gifts_select}}
+        </div> --}}
+        <button class="form-button">
+            Save this birthday!
+        </button>
+    </form>
+</div>
 <div>
-  <h5>Create a new gift!</h5>
-  <div id="create-gift-form">
-    {{> gifts_create}}
-  </div>
+    <h5>Create a new gift!</h5>
+    <div class="form-div" id="create-gift-form">
+        {{> gifts_create}}
+    </div>
 </div>
