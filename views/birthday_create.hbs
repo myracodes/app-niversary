@@ -7,14 +7,44 @@
     </div>
     <div class="form-div">
       <label for="friendLastName">Last name</label>
-      <input name="friendLastName" id="friendLastName" type="text" placeholder="type something here..."
-       >
+      <input name="friendLastName" id="friendLastName" type="text" placeholder="type something here...">
     </div>
     <div class="form-div">
       <label for="birthday">Birthday date</label>
       {{!-- <input name="birthday" id="birthday" type="date" placeholder="type something here..."> --}}
-      <input type="date" name="birthday" placeholder="DD-MM-YYYY" required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"/>
+      {{!-- <input type="date" name="birthday-day" placeholder="DD-MM-YYYY" required pattern="\d{2}-\d{2}-\d{4}" /> --}}
     </div>
+    <div id="birthday">
+      <div class="form-div">
+        <span>
+          <label for="day">Day:</label>
+          <input name="birthdayDay" type="number" min="1" max="31" placeholder="birthday day">
+        </span>
+        <span>
+          <label for="month">Month:</label>
+          <select id="month" name="birthdayMonth">
+            <option selected>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+          </select>
+        </span>
+        <span>
+          <label for="year">Year:</label>
+          <input name="birthdayYear" type="number" min="1900" max="2050" placeholder="birthday year">
+          </select>
+        </span>
+      </div>
+    </div>
+
     <div class="form-div">
       <label for="birthdayMessage">Write your birthday message</label>
       <input name="birthdayMessage" id="birthdayMessage" type="text" placeholder="type something here...">
@@ -23,7 +53,7 @@
       <label for="picture">Picture (optional)</label>
       <input name="picture" id="picture" type="file">
     </div>
-  
+
     {{!-- <div>
       <label for="gift">Gift(s)</label>
       <select name="gift" id="gift"></select>

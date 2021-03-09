@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 const birthdaySchema = new Schema({
   friendName: String,
   friendLastName: String,
-  birthday: Date,
+  birthdayDay: Number,
+  birthdayMonth: String,
+  birthdayYear: Number,
   picture: {
     type: String,
     default:
