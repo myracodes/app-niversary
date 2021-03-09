@@ -1,0 +1,32 @@
+<h1>Update your gift</h1>
+
+<a href="/gifts">See the list of Gifts</a>
+<a href="/">Back Home</a>
+
+<form action="/gifts/update" method="POST" enctype="multipart/form-data">
+
+    <label for="name">Gift Name</label>
+    <input type="text" name="name" id="name" value="Gift 1">
+
+
+    <br>
+    <label for="price">Estimated price</label>
+    <input type="number" name="price" id="price" value="10.99">
+
+
+    <br>
+    <label for="Description">Gift's Description</label>
+    <input type="text" name="Description" id="Description" value="Gift Description">
+
+    <br>
+    <label for="Picture">Picture (optional)</label>
+    <input type="file" name="Picture" id="Gift-Picture">
+
+    <br>
+    <label for="purchaseLink">purchase Link</label>
+    <input type="text" name="purchaseLink" id="purchaseLink">
+
+    <br>
+    <button class="gift-create-btn">Create Gift</button>
+
+</form>

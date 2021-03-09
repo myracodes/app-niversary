@@ -19,7 +19,7 @@ router.get('/gifts', (req, res, next)=>{
 //here, to render the form
 
 router.get('/gifts/create', (req, res, next)=>{
-    res.render('partials/gifts-create.hbs')
+    res.render('partials/gifts_create.hbs')
 })
 
 //here, to post the informaton of the gift
@@ -27,6 +27,17 @@ router.post("/gifts/create", (req, res, next)=>{
     GiftModel.create(req.body)
     .then(()=>{
         res.redirect('/gifts')
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+})
+
+//ROUTE TO UPDATE GIFT
+router.get("/gifts/update/:id", (req, res, next)=>{
+    GiftModel.findById(req.params.id)
+    .then((dbGifts)=>{
+        res.render("partials/gifts_update", {dbGifts})
     })
     .catch((error)=>{
         console.log(error)
