@@ -9,7 +9,7 @@
         </div>
         <ul class="flex-row">
             {{!-- Note: uncomment the #IF when isLoggedIn variable is created --}}
-          {{!-- {{#if isLoggedIn}} --}}
+          {{#if isLoggedIn}}
           <li>
             <a href="/birthdays">My birthdays</a>
           </li>
@@ -22,11 +22,15 @@
           <li>
             <a href="/gifts/create">Create new gift</a>
           </li>
-          {{!-- {{/if}} --}}
+          {{/if}}
         </ul>
       </div>
       <div class="flex-row">
         {{#unless isLoggedIn}}
+        <a href="">
+          <a href="/signin">
+          <span class="sign-up">Sign in</span>
+        </a>
         <a href="/signup">
           <span class="sign-up">Sign up</span>
         </a>
