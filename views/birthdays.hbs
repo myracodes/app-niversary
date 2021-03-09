@@ -30,7 +30,7 @@
                         <p>
                             <b>Picture: </b>
                             <img class="birthday-picture" src="{{this.picture}}" alt="friend ficture">
-                            
+
                         </p>
                     </li>
                     {{/if}}
@@ -42,6 +42,12 @@
                     </li>
                 </ul>
             </span>
+            <form action="/birthday/{{this.id}}/edit" method="POST">
+                <button>Edit</button>
+            </form>
+            <form action="/birthday/{{this.id}}/delete" method="POST">
+                <button>Delete</button>
+            </form>
         </li>
         {{/each}}
     </ul>

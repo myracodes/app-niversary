@@ -41,8 +41,19 @@ router.post("/birthday/create", fileUploader.single('picture'), async (req, res,
 });
 
 // UPDATE BIRTHDAY
-router.get("/birthday/edit", (req, res, next) => {
+router.get("/birthday/:id/edit", (req, res, next) => {
     res.render("birthday_edit.hbs");
 });
+
+// DELETE BIRTHDAY
+router.post('/birthday/:id/delete', (req, res, next) => {
+    BirthdayModel.findByIdAndDelete(req.params.id)
+    .then(() => {
+        console.log('birthday card deleted');
+        res.redirect('/birthdays');
+    })
+    .catch((err) => {console.log(err)});
+});
+
 
 module.exports = router;
