@@ -12,7 +12,9 @@
         </div>
         <div class="form-div">
             <label for="birthday">Birthday date</label>
-            <input name="birthday" id="birthday" type="date" value="{{this.birthday}}">
+            {{!-- <input name="birthday" id="birthday" type="date" value="{{this.birthday}}"> --}}
+            <input type="date" name="birthday" placeholder="DD-MM-YYYY" required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                value="{{this.birthday}}" />
         </div>
         <div class="form-div">
             <label for="picture">Picture (optional)</label>

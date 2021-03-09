@@ -1,27 +1,16 @@
-<h1>Here are all my birthdays!</h1>
+<h1><img src="/public/img/blue-banner.jpg" alt="banner-all-birthdays">My birthdays</h1>
 
-<div class="my-birthdays">
+
+<div>
     <ul class="birthdays-list">
         {{#each birthdays}}
         <h5>{{this.friendName}}'s birthday info</h5>
         <li>
-            <span class="one-birthday">
-                <ul class="individual-birthday">
+            <span>
+                <ul>
                     <li>
                         <p>
-                            <b>Name: </b>
-                            {{this.friendName}}
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Last name: </b>
-                            {{this.friendLastName}}
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Birthday: </b>
+                            {{!-- <b>Birthday: </b> --}}
                             {{this.birthday}}
                         </p>
                     </li>
@@ -53,13 +42,6 @@
             </span>
             <form action="/birthday/details/{{this.id}}" method="GET">
                 <button>See details</button>
-            </form>
-
-            <form action="/birthday/{{this.id}}/edit" method="GET">
-                <button>Edit</button>
-            </form>
-            <form action="/birthday/{{this.id}}/delete" method="POST">
-                <button>Delete</button>
             </form>
         </li>
         {{/each}}
