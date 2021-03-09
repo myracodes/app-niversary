@@ -36,7 +36,15 @@
                     <li>
                         <p>
                             <b>Gifts: </b>
-                            {{birthday.gift}}
+                            {{#each birthday.gifts}}
+                            {{#each this}}
+                            {{this.name}} <br>
+                            {{this.price}}
+                            {{this.Description}}
+                            {{this.purchaseLink}}
+                            {{!-- <img src="{{this.Picture}}" alt="Picture"> --}}
+                            {{/each}}
+                            {{/each}}
                         </p>
                     </li>
                 </ul>
