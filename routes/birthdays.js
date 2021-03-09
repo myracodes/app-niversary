@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const BirthdayModel = require('./../models/birthdays');
-const GiftModel = require('./../models/gifts');
+// const GiftModel = require('./../models/gifts');
+const fileUploader = require('./../config/cloudinary');
 
 // BIRTHDAYS DASHBOARD
 router.get('/birthdays', (req, res, next) => {
@@ -22,24 +23,15 @@ router.get("/birthday/create", (req, res, next) => {
     console.log('-------------post create GET');
 });
 
-router.post("/birthday/create", async (req, res, next) => {
+router.post("/birthday/create", fileUploader.single('picture'), async (req, res, next) => {
     console.log('-------------POST create');
-    const {
-        friendName,
-        friendLastName,
-        birthday,
-        picture,
-        gift
-    } = req.body;
-    console.log(req.body);
+    const newBirthday = {
+        ...req.body
+    };
+    if (!req.file) newBirthday.picture = undefined;
+    else newBirthday.picture = req.file.path;
     try {
-        await BirthdayModel.create({
-            friendName,
-            friendLastName,
-            birthday,
-            picture,
-            gift
-        });
+        await BirthdayModel.create(newBirthday);
         console.log("birthday successfully created :D");
         res.redirect("/birthdays");
     } catch (err) {

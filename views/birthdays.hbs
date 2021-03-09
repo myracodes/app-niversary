@@ -1,1 +1,46 @@
 <h1>Here are all my birthdays!</h1>
+
+<div class="my-birthdays">
+    <ul class="birthdays-list">
+        {{#each birthdays}}
+        <h5>{{this.friendName}}'s birthday info</h5>
+        <li>
+            <span class="one-birthday">
+                <ul class="individual-birthday">
+                    <li>
+                        <p>
+                            <b>Name: </b>
+                            {{this.friendName}}
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>Last name: </b>
+                            {{this.friendLastName}}
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>Birthday: </b>
+                            {{this.birthday}}
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>Picture: </b>
+                            <img src="{{this.picture}}" alt="friend ficture">
+                            
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>Gifts: </b>
+                            {{this.gift}}
+                        </p>
+                    </li>
+                </ul>
+            </span>
+        </li>
+        {{/each}}
+    </ul>
+</div>
