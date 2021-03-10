@@ -2,59 +2,38 @@
 
 <div class="my-birthdays">
     <ul class="birthdays-list">
-        <h5>{{birthday.friendName}}'s birthday info</h5>
-        <li>
-            <span class="one-birthday">
-                <ul class="individual-birthday">
-                    <li>
-                        <p>
-                            <b>Name: </b>
-                            {{birthday.friendName}}
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Last name: </b>
-                            {{birthday.friendLastName}}
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <b>Birthday: </b>
-                            {{birthday.birthdayDay}} {{birthday.birthdayMonth}} {{birthday.birthdayYear}}
-                        </p>
-                    </li>
-                    {{!-- {{#if this.picture}} --}}
-                    <li>
-                        <p>
-                            <b>Picture: </b>
-                            <img class="birthday-picture" src="{{birthday.picture}}" alt="friend picture">
+        <h5>{{birthday.friendName}} {{birthday.friendLastName}}'s birthday info</h5>
+        <span class="one-birthday">
+            <ul class="individual-birthday">
+                <li>
+                    <p>
+                        <b>Birthday: 
+                        {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}} (DD-MM-YYYY)</b>
+                    </p>
+                </li>
+                <li>
+                    <img class="birthday-picture" src="{{birthday.picture}}" alt="friend picture">
+                </li>
+                <li>
+                    <p>
+                        <b>Gifts: </b>
+                        {{#each birthday.gifts}}
+                        {{#each this}}
+                        {{this.name}} <br>
+                        {{this.price}}
+                        {{this.Description}}
+                        {{this.purchaseLink}}
+                        {{!-- <img src="{{this.Picture}}" alt="Picture"> --}}
+                        {{/each}}
+                        {{/each}}
+                    </p>
+                </li>
+            </ul>
+        </span>
 
-                        </p>
-                    </li>
-                    {{!-- {{/if}} --}}
-                    <li>
-                        <p>
-                            <b>Gifts: </b>
-                            {{#each birthday.gifts}}
-                            {{#each this}}
-                            {{this.name}} <br>
-                            {{this.price}}
-                            {{this.Description}}
-                            {{this.purchaseLink}}
-                            {{!-- <img src="{{this.Picture}}" alt="Picture"> --}}
-                            {{/each}}
-                            {{/each}}
-                        </p>
-                    </li>
-                </ul>
-            </span>
-
-            <form action="/birthday/{{birthday.id}}/edit" method="GET">
-                <button class="button">Edit</button>
-            </form>
-            <form action="/birthday/{{birthday.id}}/delete" method="POST">
-                <button class="button">Delete</button>
-            </form>
-        </li>
-       
+        <form action="/birthday/{{birthday.id}}/edit" method="GET">
+            <button class="button">Edit</button>
+        </form>
+        <form action="/birthday/{{birthday.id}}/delete" method="POST">
+            <button class="button">Delete</button>
+        </form>

@@ -1,31 +1,17 @@
 <h1><img src="/public/img/blue-banner.jpg" alt="banner-all-birthdays">My birthdays</h1>
 
-
 <div>
     <ul class="birthdays-list">
         {{#each birthdays}}
-        <h5>{{this.friendName}}'s birthday info</h5>
+        <h5>{{this.friendName}} {{birthday.friendLastName}}</h5>
         <li>
-            <span>
-                <p>
-                    <b>Birthday (DD-MM): {{this.birthdayDay}}/{{this.birthdayMonth}}</b>
-                </p>
+            <p>
+                <b>Birthday: {{this.birthdayDay}}/{{this.birthdayMonth}}</b> (DD-MM)
+            </p>
         </li>
         <li>
-            <img class="birthday-picture" src="{{this.picture}}" alt="friend ficture">
-        </li>
-            <b> Gifts: </b>
-            {{#each gifts}}
-            {{#each this}}
-
-            {{this.name}}<br>
-            {{this.price}}
-
-            {{/each}}
-            {{/each}}
-            </span>
             <form action="/birthday/details/{{this.id}}" method="GET">
-                <button>See details</button>
+                <input type="image" class="birthday-picture" src="{{this.picture}}" alt="friend ficture"></input>
             </form>
         </li>
         {{/each}}
