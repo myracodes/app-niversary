@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const GiftModel = require('../models/gifts')
 const fileUploader = require('../config/cloudinary')
-
+const protectPrivateRoute = require('../middlewares/protectPrivateRoute')
 
 
 //ROUTE TO DISPLAY THE LIST OF EXISTING GIFTS
-router.get('/gifts', (req, res, next)=>{
+router.get('/gifts', protectPrivateRoute, (req, res, next)=>{
     GiftModel.find()
     .then((dbGifts)=>{
         res.render('partials/gifts', {dbGifts})
@@ -20,7 +20,7 @@ router.get('/gifts', (req, res, next)=>{
 //ROUTE TO CREATE A NEW GIFT
 //here, to render the form
 
-router.get('/gifts/create', (req, res, next)=>{
+router.get('/gifts/create', protectPrivateRoute, (req, res, next)=>{
     res.render('partials/gifts_create.hbs')
 })
 
@@ -42,7 +42,7 @@ router.post("/gifts/create", fileUploader.single("Picture"), (req, res, next)=>{
 
 //ROUTE TO UPDATE GIFT
 //first, we get the form with the ID of the gift and its values
-router.get("/gifts/update/:id",(req, res, next)=>{
+router.get("/gifts/update/:id", protectPrivateRoute, (req, res, next)=>{
     
     GiftModel.findById(req.params.id)
     .then((dbGifts)=>{
@@ -80,7 +80,7 @@ router.post("/gifts/delete/:id", (req, res, next) => {
 });
 
 // ROUTE TO SEE THE DETAILS OF A SPECIFIC GIFT
-router.get('/gifts/details/:id', (req, res, next)=>{
+router.get('/gifts/details/:id', protectPrivateRoute, (req, res, next)=>{
     GiftModel.findById(req.params.id)
     .then((gift)=>{
         res.render("partials/gift_details.hbs", {gift})

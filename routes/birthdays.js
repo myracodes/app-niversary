@@ -3,10 +3,12 @@ const router = express.Router();
 const BirthdayModel = require('./../models/birthdays');
 const GiftModel = require('./../models/gifts');
 const fileUploader = require('./../config/cloudinary');
+const protectPrivateRoute = require("../middlewares/protectPrivateRoute");
+
 
 
 // BIRTHDAYS DASHBOARD
-router.get('/birthdays', (req, res, next) => {
+router.get('/birthdays', protectPrivateRoute, (req, res, next) => {
     BirthdayModel.find().populate("gifts")
         .then((birthdays) => {
             res.render('birthdays.hbs', {
@@ -19,7 +21,7 @@ router.get('/birthdays', (req, res, next) => {
 });
 
 // CREATE BIRTHDAY
-router.get("/birthday/create", (req, res, next) => {
+router.get("/birthday/create", protectPrivateRoute, (req, res, next) => {
     GiftModel.find()
     .then((gifts)=>{
     res.render("birthday_create.hbs", {gifts});
@@ -47,7 +49,7 @@ router.post("/birthday/create", fileUploader.single('picture'), async (req, res,
 });
 
 // UPDATE BIRTHDAY
-router.get("/birthday/:id/edit", (req, res, next) => {
+router.get("/birthday/:id/edit", protectPrivateRoute, (req, res, next) => {
     BirthdayModel.findByIdAndUpdate(req.params.id)
         .then((birthday) => {
             res.render("birthday_edit.hbs", birthday);
@@ -90,7 +92,7 @@ router.post('/birthday/:id/delete', (req, res, next) => {
 
 //SPECIFIC BIRTHDAY DETAILS
 router.get(
-  "/birthday/details/:id",
+  "/birthday/details/:id", protectPrivateRoute,
   (req, res, next) => {
     BirthdayModel.findById(req.params.id)
       .populate("gifts")
