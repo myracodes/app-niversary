@@ -7,7 +7,7 @@
 <div class="gifts-list">
     {{#each dbGifts}}
 
-    <img src="{{this.Picture}}" alt="gift-picture">
+    <img src="{{this.Picture}}" alt="gift-picture" class="gift-picture">
     <p>{{this.name}}</p>
     <p>{{this.Description}}</p>
     <a href="/gifts/update/{{this.id}}">Update Gift</a>
