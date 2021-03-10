@@ -1,9 +1,15 @@
-<h1> LIST OF AVAILABLE GIFTS</h1>
+<div class="banner-gifts-list">
+    <img src="/img/blue-banner.jpg" alt="banner" id="banner">
+
+<div>
+    <h1 class="title-gifts-list"> MY GIFTS LIST</h1>
+</div>
+</div>
 
 <a href='/gifts/create'>Create New Gift</a>
 <a href="/">Back Home</a>
 
-
+<div class="gifts-list-wrapper">
 <div class="gifts-list">
 
     {{#each dbGifts}}
@@ -17,14 +23,18 @@
             <p>{{this.price}}€</p>
             <p>ASSIGN TO GOES HERE JUANITO</p>
             <div class="update-seedetails-delete">
-            <p><a href='/gifts/details/{{this.id}}'> See Gift Details </a></p><p>|</p>
-            <p><a href="/gifts/update/{{this.id}}"> Update Gift </a> </p><p>|</p>
-            <p><form action="/gifts/delete/{{this.id}}" method="POST">
-            <button class="gift-btn">Delete Gift</button>
+                <p><a href='/gifts/details/{{this.id}}'> See Gift Details </a></p>
+                <p>|</p>
+                <p><a href="/gifts/update/{{this.id}}"> Update Gift </a> </p>
+                <p>|</p>
+                <p>
+                <form action="/gifts/delete/{{this.id}}" method="POST">
+                    <button class="gift-btn">Delete Gift</button>
             </div>
-            
+
         </div>
     </div>
     {{/each}}
 
+</div>
 </div>

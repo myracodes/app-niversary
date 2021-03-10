@@ -13,7 +13,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin: 0 0 2px 0;
+  margin: 0 0px 1px 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   /* color: white; */
@@ -27,9 +27,9 @@ html {
 }
 
 body {
-  padding: 40px;
+  /* padding: 40px; */
   font: 14px;
-  background-color: rgba(0, 0, 0, 0.26);
+  /* background-color: rgba(0, 0, 0, 0.26); */
 }
 
 a {
@@ -43,27 +43,30 @@ a:hover {
 
 .full-container {
   flex-direction: row;
-  justify-content: space-between;
-  max-width: 800px;
+  /* justify-content: space-between; */
+  /* max-width: 800px; */
+  justify-content: center;
 }
 
 .body-container {
   flex-direction: column;
-  width: 80%;
+  /* width: 80%; */
+
 }
 
 #banner {
-  position: fixed;
-  width: 70%;
-  max-width: 600px;
-  z-index: -1;
+  /* position: fixed; */
+  width: 100%;
+  /* max-width: 600px; */
+  /* z-index: -1; */
 }
 
 h1, h2 {
   color: #2d3f3e;
-  padding: 40px 60px;
+  /* padding: 40px 60px; */
   align-self: flex-start;
   justify-self: flex-start;
-  margin-bottom: 180px;
+  /* margin-bottom: 180px; */
   font-size: 1.8rem;
+  z-index: 10;
 }

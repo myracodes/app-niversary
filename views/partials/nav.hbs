@@ -1,6 +1,39 @@
   <div id="navbar">
     <div id="logo">
-      <a href="/"><img src="/img/bdcake.png" alt="logo-link-to-home"></a>
+      <div class="logo">
+      <a href="/"><img class="img-logo" src="/img/bdcake.png" alt="logo-link-to-home"></a>
+      </div>
+      {{!-- {{#unless isLoggedIn}}
+      <a href="">
+        <a href="/signin">
+          <span class="sign-up">Sign in</span>
+        </a>
+        <a href="/signup">
+          <span class="sign-up">Sign up</span>
+        </a>
+        {{/unless}} --}}
+        {{!-- {{#if isLoggedIn}}
+        <a href="/signout">
+          <span>Log out</span>
+        </a>
+        {{/if}} --}}
+      <ul>
+        {{#if isLoggedIn}}
+        {{!-- ici ajouter nom user + photo de profil --}}
+        <li>
+          <a href="/birthdays">My birthdays</a>
+        </li>
+        <li>
+          <a href="/birthday/create">Create birthday</a>
+        </li>
+        <li>
+          <a href="/gifts">My gifts list</a>
+        </li>
+        <li>
+          <a href="/gifts/create">Create gift</a>
+        </li>
+        {{/if}}
+      </ul>
       {{#unless isLoggedIn}}
       <a href="">
         <a href="/signin">
@@ -10,27 +43,10 @@
           <span class="sign-up">Sign up</span>
         </a>
         {{/unless}}
-        {{#if isLoggedIn}}
+      {{#if isLoggedIn}}
         <a href="/signout">
           <span>Log out</span>
         </a>
         {{/if}}
-      <ul>
-        {{#if isLoggedIn}}
-        {{!-- ici ajouter nom user + photo de profil --}}
-        <li>
-          <a href="/birthdays">My birthdays</a>
-        </li>
-        <li>
-          <a href="/birthday/create">Create new birthday</a>
-        </li>
-        <li>
-          <a href="/gifts">My gift list</a>
-        </li>
-        <li>
-          <a href="/gifts/create">Create new gift</a>
-        </li>
-        {{/if}}
-      </ul>
     </div>
   </div>
