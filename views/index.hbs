@@ -1,11 +1,31 @@
-<h1>Welcome to {{title}}</h1>
+<div class="banner-gifts-list">
+    <img src="/img/blue-banner.jpg" alt="banner" id="banner">
+
+    <div>
+        <h1 class="title-gifts-list"> WELCOME TO APP'NIVERSARY!</h1>
+    </div>
+</div>
+
 {{!-- <p class="welcome">{{title}}</p> --}}
 
 {{#unless isLoggedIn}}
-<div>
-    <h3>Welcome to app'niversary!</h3>
-    <p> Don't ever miss your friends' birthdays anymore, and store all your gift ideas at the same place!
-    <a href="/signup">Sign up</a> if you're new or <a href="/signin">sign in</a> if you already have an account!</p>
+<div class="welcome-message-wrapper">
+<div class="welcome-message">
+
+    <div ><p> APP'niversary gives you all the tools you need to always remember the birthdays of the people you care for and gather the best gifts ideas for them. </p></div>
+
+    <div class="argument-wrapper">
+        <div class="argument-box" id="red"><p>Create reminders</p>
+        <img src="/img/reminder.png" alt=""></div>
+        <div class="argument-box" id="blue"><p>List your gifts ideas</p>
+        <img src="/img/gift.png" alt=""></div>
+        <div class="argument-box" id="green"><p>Assign gift to relatives</p><img src="/img/givegift.png" alt=""></div>
+    </div>
+
+    <div class="never-again"><p class="never"> Never forget a birthday again!</p></div><br>
+
+    <p class="never"><a href="/signup">Sign up</a><a href="/signin">Sign in</a></p>
+</div>
 </div>
 {{/unless}}
 
@@ -18,3 +38,4 @@
 {{/if}}
 
 
+{{!-- you need to always feeling Don't ever miss your friends' birthdays anymore, and store all your gift ideas at the same place! --}}

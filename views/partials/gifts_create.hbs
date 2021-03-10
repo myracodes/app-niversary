@@ -1,11 +1,18 @@
-<h1>CREATE A NEW GIFT</h1>
+<div class="banner-gifts-list">
+    <img src="/img/blue-banner.jpg" alt="banner" id="banner">
 
-<a href="/gifts">Back to gifts list</a>
+    <div>
+        <h1 class="title-gifts-list"> ADD A GIFT IDEA</h1>
+    </div>
+</div>
+{{!-- <a href="/gifts">Back to gifts list</a> --}}
 {{!-- <a href="/">Home</a> --}}
+<div>
 <hr>
 <form action="/gifts/create" method="POST" enctype="multipart/form-data">
 
 <label for="name">Name</label>
+
 <input type="text" name="name" id="name" placeholder="Add the gift name">
 
 
@@ -42,3 +49,4 @@
 <button class="gift-create-btn">CREATE</button>
 
 </form>
+</div>

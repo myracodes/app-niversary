@@ -1,6 +1,32 @@
 .birthday-picture {
     width: 180px;
     height: 180px;
-    border-radius: 50%;
-    border: solid white 2px;
+    /* border-radius: 50%; */
+    /* border: solid white 2px; */
+    /* padding: 0 5px; */
+    margin: 10px;
+}
+
+.birthday-container {
+    background-color: #f6b26b;
+    
+}
+
+.birthdays-content-container {
+    display: flex;
+    flex-direction: column;
+    color:#000000 ;
+    background-color: #a2c4c9;
+    align-items: center;
+    margin: 10px 10px;
+    
+
+    
+}
+
+.birthdays-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 100px;
 }

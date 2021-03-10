@@ -1,0 +1,60 @@
+.welcome-message {
+    display: flex;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.5)  ;
+    padding: 20px;
+    font-size: 1.3em;
+    height: 100vh;
+    width: 100%;
+    
+
+
+}
+
+.never {
+    font-size: 1.4em;
+}
+
+.intro-text {
+    max-width: 800px;
+}
+
+.welcome-message-wrapper {
+    display: flex;
+    align-items: center;
+    
+    
+
+}
+
+.never-again {
+    font-weight: bold;
+}
+
+.argument-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.argument-box {
+padding: 30px;
+margin: 10px;
+height: 300px;
+width: 300px;
+
+}
+
+#red {
+    background-color: #e06666;
+}
+
+#blue {
+    background-color: #a2c4c9;
+}
+
+#green {
+    background-color: #b6d7a8;
+}

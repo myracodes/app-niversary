@@ -1,6 +1,6 @@
 .gift-picture {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border: solid white 2px;
     margin: 10px;
 }
@@ -13,12 +13,14 @@
     margin: 10px 0;
     padding-right: 20px;
     width: 100%;
+
     
 }
 
 .banner-gifts-list {
     position: relative;
     text-align: center;
+    margin-bottom: 30px;
 
 }
 
