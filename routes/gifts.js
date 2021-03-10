@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const GiftModel = require('../models/gifts')
+const BirthdayModel = require('../models/birthdays')
 const fileUploader = require('../config/cloudinary')
 const protectPrivateRoute = require('../middlewares/protectPrivateRoute')
 
@@ -21,7 +22,12 @@ router.get('/gifts', protectPrivateRoute, (req, res, next)=>{
 //here, to render the form
 
 router.get('/gifts/create', protectPrivateRoute, (req, res, next)=>{
-    res.render('partials/gifts_create.hbs')
+    BirthdayModel.find() //ici, je demande le BirthdayModel pour pouvoir l'afficher dans le formulaire des gifts
+    .then((birthdays)=>{
+    res.render("partials/gifts_create.hbs", {birthdays});
+    })
+    .catch((error)=>{console.log(error);})
+    // res.render('partials/gifts_create.hbs')
 })
 
 //here, to post the informaton of the gift
@@ -82,12 +88,13 @@ router.post("/gifts/delete/:id", (req, res, next) => {
 // ROUTE TO SEE THE DETAILS OF A SPECIFIC GIFT
 router.get('/gifts/details/:id', protectPrivateRoute, (req, res, next)=>{
     GiftModel.findById(req.params.id)
-    .then((gift)=>{
-        res.render("partials/gift_details.hbs", {gift})
-    })
-    .catch((error)=>{
-        console.log(error)
-    })
+      .populate("birthdays") //ICI, POPULATE POUR ESSAYER D AFFICHER LES BIRTHDAYS ASSIGNÉS MAIS CA NE MARCHE PAS TROP
+      .then((gift) => {
+        res.render("partials/gift_details.hbs", { gift });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 })
 
 

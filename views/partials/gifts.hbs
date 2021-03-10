@@ -21,15 +21,13 @@
             <h2 class="gift-title">{{this.name}}</h2>
             <p>{{this.Description}}</p>
             <p>{{this.price}}€</p>
-            <p>ASSIGN TO GOES HERE JUANITO</p>
+            {{!-- <p>ASSIGN TO GOES HERE JUANITO</p> --}}
             <div class="update-seedetails-delete">
-                <p><a href='/gifts/details/{{this.id}}'> See Gift Details </a></p>
-                <p>|</p>
-                <p><a href="/gifts/update/{{this.id}}"> Update Gift </a> </p>
-                <p>|</p>
-                <p>
-                <form action="/gifts/delete/{{this.id}}" method="POST">
-                    <button class="gift-btn">Delete Gift</button>
+            <p><a href='/gifts/details/{{this.id}}'> See Gift Details </a></p><p>|</p>
+            <p><a href="/gifts/update/{{this.id}}"> Update Gift </a> </p><p>|</p>
+            <p><form action="/gifts/delete/{{this.id}}" method="POST">
+            <button class="gift-btn">Delete Gift</button>
+            </form>
             </div>
 
         </div>

@@ -7,9 +7,15 @@
 <p>DESCRIPTION: {{gift.Description}}</p>
 <img src="{{gift.Picture}}" alt="gift-image">
 <p>PURCHASE LINK: <a href="{{gift.purchaseLink}}" target="blank">{{gift.purchaseLink}}</a></p>
-
-
-
+<p>HAS BEEN ALREADY ASSIGNED TO:</p>
+<p>
+{{!-- {{#each gift}}
+{{!-- {{#each this.assignTo}}
+{{this}} --}} 
+{{!-- {{this.friendName}} --}}
+{{!-- {{/each}}
+{{/each}} --}}
+</p>
 
 <form action="/gifts/delete/{{gift.id}}" method="POST">
     <button>Delete Gift</button>
