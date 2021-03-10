@@ -14,13 +14,11 @@
             <p>
                 <b>Gifts: </b>
                 {{#each birthday.gifts}}
-                {{#each this}}
                 {{this.name}} <br>
-                {{this.price}}
-                {{this.Description}}
-                {{this.purchaseLink}}
-                {{!-- <img src="{{this.Picture}}" alt="Picture"> --}}
-                {{/each}}
+                {{this.price}}€ <br>
+                {{this.Description}} <br>
+                Buy it: {{this.purchaseLink}} <br>
+                <img src="{{this.Picture}}" alt="Picture">
                 {{/each}}
             </p>
         </li>
