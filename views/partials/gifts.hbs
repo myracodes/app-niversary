@@ -5,17 +5,22 @@
 
 
 <div class="gifts-list">
-    {{#each dbGifts}}
 
+    {{#each dbGifts}}
+    <div class="gift-content-container">
+    <div>
     <img src="{{this.Picture}}" alt="gift-picture" class="gift-picture">
-    <p>{{this.name}}</p>
+    </div>
+    <div class="text-gift-container">
+    <h2 class="gift-title">{{this.name}}</h2>
     <p>{{this.Description}}</p>
     <a href="/gifts/update/{{this.id}}">Update Gift</a>
     <a href='/gifts/details/{{this.id}}'>See Gift Details</a>
     <form action="/gifts/delete/{{this.id}}" method="POST">
-    <button>Delete Gift</button>
+    <button class="gift-btn">Delete Gift</button>
     </form>
-
+    </div>
+    </div>
     {{/each}}
 
 </div>
