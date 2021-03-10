@@ -5,7 +5,7 @@ const birthdaySchema = new Schema({
   friendName: String,
   friendLastName: String,
   birthdayDay: Number,
-  birthdayMonth: String,
+  birthdayMonth: Number,
   birthdayYear: Number,
   picture: {
     type: String,

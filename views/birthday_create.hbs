@@ -9,19 +9,20 @@
       <label for="friendLastName">Last name</label>
       <input name="friendLastName" id="friendLastName" type="text" placeholder="type something here...">
     </div>
-    <div class="form-div">
+    {{!-- <div class="form-div">
       <label for="birthday">Birthday date</label>
-      {{!-- <input name="birthday" id="birthday" type="date" placeholder="type something here..."> --}}
-      {{!-- <input type="date" name="birthday-day" placeholder="DD-MM-YYYY" required pattern="\d{2}-\d{2}-\d{4}" /> --}}
-    </div>
+      <input name="birthday" id="birthday" type="date" placeholder="type something here..."> --}}
+      {{!-- <input type="date" name="birthday-day" placeholder="DD-MM-YYYY" required pattern="\d{2}-\d{2}-\d{4}" />
+    </div> --}}
     <div id="birthday">
       <div class="form-div">
         <span>
-          <label for="day">Day:</label>
-          <input name="birthdayDay" type="number" min="1" max="31" placeholder="birthday day">
+          <p>Birthday date</p>
+          <label for="day"></label>
+          <input name="birthdayDay" type="number" min="1" max="31" placeholder="day">
         </span>
         <span>
-          <label for="month">Month:</label>
+          <label for="month"></label>
           <select id="month" name="birthdayMonth">
             <option selected>January</option>
             <option>February</option>
@@ -38,8 +39,8 @@
           </select>
         </span>
         <span>
-          <label for="year">Year:</label>
-          <input name="birthdayYear" type="number" min="1900" max="2050" placeholder="birthday year">
+          <label for="year"></label>
+          <input name="birthdayYear" type="number" min="1900" max="2050" placeholder="year">
           </select>
         </span>
       </div>

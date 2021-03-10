@@ -7,38 +7,22 @@
         <h5>{{this.friendName}}'s birthday info</h5>
         <li>
             <span>
-                <ul>
-                    <li>
-                        <p>
-                            {{!-- <b>Birthday: </b> --}}
-                            {{this.birthday}}
-                        </p>
-                    </li>
-                    {{!-- {{#if this.picture}} --}}
-                    <li>
-                        <p>
-                            <b>Picture: </b>
-                            <img class="birthday-picture" src="{{this.picture}}" alt="friend ficture">
+                <p>
+                    <b>Birthday: {{this.birthdayDay}}/{{this.birthdayMonth}}/{{this.birthdayYear}}</b>
+                </p>
+        </li>
+        <li>
+            <img class="birthday-picture" src="{{this.picture}}" alt="friend ficture">
+        </li>
+            <b> Gifts: </b>
+            {{#each gifts}}
+            {{#each this}}
 
-                        </p>
-                    </li>
-                    {{!-- {{/if}} --}}
-                    
-                      {{!-- <li>
-                        
-                            <b> Gifts: </b>
-                            {{#each gifts}}
-                            {{#each this}}
+            {{this.name}}<br>
+            {{this.price}}
 
-                               {{this.name}}<br>
-                               {{this.price}}
-
-
-                            {{/each}}
-                            {{/each}}
-                        </li> --}}
-                    
-                </ul>
+            {{/each}}
+            {{/each}}
             </span>
             <form action="/birthday/details/{{this.id}}" method="GET">
                 <button>See details</button>
