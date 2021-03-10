@@ -20,32 +20,15 @@
             <p>Birthday date</p>
             <span>
                 <label for="day"></label>
-                <input name="birthdayDay" type="number" min="1" max="31" placeholder="day">
+                <input name="birthdayDay" type="number" min="1" max="31" value="{{this.birthdayDay}}">
             </span>
             <span>
                 <label for="month"></label>
-                <input name="birthdayMonth" type="number" min="1" max="12" placeholder="month">
+                <input name="birthdayMonth" type="number" min="1" max="12" value="{{this.birthdayMonth}}">
             </span>
-            {{!-- <span>
-                <label for="month"></label>
-                <select id="month" name="birthdayMonth">
-                    <option selected>January</option>
-                    <option>February</option>
-                    <option>March</option>
-                    <option>April</option>
-                    <option>May</option>
-                    <option>June</option>
-                    <option>July</option>
-                    <option>August</option>
-                    <option>September</option>
-                    <option>October</option>
-                    <option>November</option>
-                    <option>December</option>
-                </select>
-            </span> --}}
             <span>
                 <label for="year"></label>
-                <input name="birthdayYear" type="number" min="1900" max="2050" placeholder="year">
+                <input name="birthdayYear" type="number" min="1900" max="2050" value="{{this.birthdayYear}}">
                 </select>
             </span>
         </div>
