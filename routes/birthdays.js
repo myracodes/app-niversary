@@ -23,10 +23,14 @@ router.get('/birthdays', protectPrivateRoute, (req, res, next) => {
 // CREATE BIRTHDAY
 router.get("/birthday/create", protectPrivateRoute, (req, res, next) => {
     GiftModel.find()
-    .then((gifts)=>{
-    res.render("birthday_create.hbs", {gifts});
-    })
-    .catch((error)=>{console.log(error);})
+        .then((gifts) => {
+            res.render("birthday_create.hbs", {
+                gifts
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     // console.log('-------------post create GET');
 });
 
@@ -92,18 +96,19 @@ router.post('/birthday/:id/delete', (req, res, next) => {
 
 //SPECIFIC BIRTHDAY DETAILS
 router.get(
-  "/birthday/details/:id", protectPrivateRoute,
-  (req, res, next) => {
-    BirthdayModel.findById(req.params.id)
-      .populate("gifts")
-      .then((birthday) => {
-        res.render("birthday_details.hbs", { birthday });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-);
+    "/birthday/details/:id", protectPrivateRoute,
+    (req, res, next) => {
+        BirthdayModel.findById(req.params.id)
+            .populate("gifts")
+            .then((birthday) => {
+                res.render("birthday_details.hbs", {
+                    birthday
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    });
 
 
 

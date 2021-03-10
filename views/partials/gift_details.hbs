@@ -10,12 +10,12 @@
 <p>Buy it: <a href="{{gift.purchaseLink}}" target="blank">{{gift.purchaseLink}}</a></p>
 {{!-- <p>This gift is already used in these birthdays:</p>
 <p>
- {{#each gift}}
-{{#each this.assignTo}}
-{{this}}
-{{this.friendName}}
-{{/each}}
-{{/each}}
+    {{#each gift}}
+    {{#each this.assignTo}}
+    {{this}}
+    {{this.friendName}}
+    {{/each}}
+    {{/each}}
 </p> --}}
 
 <form action="/gifts/delete/{{gift.id}}" method="POST">

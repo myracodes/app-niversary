@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const GiftModel = require('../models/gifts')
-const BirthdayModel = require('../models/birthdays')
-const fileUploader = require('../config/cloudinary')
-const protectPrivateRoute = require('../middlewares/protectPrivateRoute')
+const GiftModel = require('../models/gifts');
+const BirthdayModel = require('../models/birthdays');
+const fileUploader = require('../config/cloudinary');
+const protectPrivateRoute = require('../middlewares/protectPrivateRoute');
 
 
 //ROUTE TO DISPLAY THE LIST OF EXISTING GIFTS
@@ -15,7 +15,7 @@ router.get('/gifts', protectPrivateRoute, (req, res, next)=>{
     .catch((error)=>{
         log(error)
     })
-})
+});
 
 
 //ROUTE TO CREATE A NEW GIFT
@@ -28,7 +28,7 @@ router.get('/gifts/create', protectPrivateRoute, (req, res, next)=>{
     })
     .catch((error)=>{console.log(error);})
     // res.render('partials/gifts_create.hbs')
-})
+});
 
 //here, to post the informaton of the gift
 router.post("/gifts/create", fileUploader.single("Picture"), (req, res, next)=>{
@@ -44,7 +44,7 @@ router.post("/gifts/create", fileUploader.single("Picture"), (req, res, next)=>{
     .catch((error)=>{
         console.log(error)
     })
-})
+});
 
 //ROUTE TO UPDATE GIFT
 //first, we get the form with the ID of the gift and its values
@@ -95,7 +95,7 @@ router.get('/gifts/details/:id', protectPrivateRoute, (req, res, next)=>{
       .catch((error) => {
         console.log(error);
       });
-})
+});
 
 
 

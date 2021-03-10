@@ -4,12 +4,12 @@
     <ul class="birthdays-list">
         {{#each birthdays}}
         <li>
-        <h5>{{this.friendName}} {{birthday.friendLastName}}</h5>
+            <h5>{{this.friendName}} {{birthday.friendLastName}}</h5>
             <form action="/birthday/details/{{this.id}}" method="GET">
                 <input type="image" class="birthday-picture" src="{{this.picture}}" alt="friend ficture"></input>
             </form>
             <p><b>{{this.birthdayDay}}/{{this.birthdayMonth}} (dd-mm)</b></p>
-        <hr>
+            <hr>
         </li>
         {{/each}}
     </ul>
