@@ -23,8 +23,40 @@
 }
 
 .gift-btn {
-    width: 100px;
+    /* width: 100px; */
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    
+}
+
+.gift-btn:hover {
+    color: white;
+    
 }
 
 .text-gift-container {
+}
+
+.update-seedetails-delete {
+    display: flex;
+    flex-direction: row;
+    color: black;
+
+}
+
+.update-seedetails-delete > p > a {
+    color: black;
+}
+
+.update-seedetails-delete > p > a:hover {
+    color: white;
+}
+
+.update-seedetails-delete > p {
+    margin: 0 10px 0 0;
 }
