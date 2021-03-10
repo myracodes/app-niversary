@@ -65,7 +65,7 @@ router.post("/birthday/:id/edit", fileUploader.single('picture'), (req, res, nex
     };
     if (!req.file) newBirthday.picture = undefined;
     else newBirthday.picture = req.file.path;
-    BirthdayModel.findByIdAndUpdate(req.params.id, req.body)
+    BirthdayModel.findByIdAndUpdate(req.params.id, newBirthday)
         .then(() => {
             console.log('UPDATE SUCCESSFUL');
             res.redirect("/birthdays");

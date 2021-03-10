@@ -1,39 +1,34 @@
-<h1>Birthday details</h1>
-
+<h1>{{birthday.friendName}} {{birthday.friendLastName}}'s birthday details</h1>
 <div class="my-birthdays">
-    <ul class="birthdays-list">
-        <h5>{{birthday.friendName}} {{birthday.friendLastName}}'s birthday info</h5>
-        <span class="one-birthday">
-            <ul class="individual-birthday">
-                <li>
-                    <p>
-                        <b>Birthday: 
-                        {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}} (DD-MM-YYYY)</b>
-                    </p>
-                </li>
-                <li>
-                    <img class="birthday-picture" src="{{birthday.picture}}" alt="friend picture">
-                </li>
-                <li>
-                    <p>
-                        <b>Gifts: </b>
-                        {{#each birthday.gifts}}
-                        {{#each this}}
-                        {{this.name}} <br>
-                        {{this.price}}
-                        {{this.Description}}
-                        {{this.purchaseLink}}
-                        {{!-- <img src="{{this.Picture}}" alt="Picture"> --}}
-                        {{/each}}
-                        {{/each}}
-                    </p>
-                </li>
-            </ul>
-        </span>
+    <ul class="individual-birthday">
+        <li>
+            <p>
+                <b>Birthday:
+                    {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}} (DD-MM-YYYY)</b>
+            </p>
+        </li>
+        <li>
+            <img class="birthday-picture" src="{{birthday.picture}}" alt="friend picture">
+        </li>
+        <li>
+            <p>
+                <b>Gifts: </b>
+                {{#each birthday.gifts}}
+                {{#each this}}
+                {{this.name}} <br>
+                {{this.price}}
+                {{this.Description}}
+                {{this.purchaseLink}}
+                {{!-- <img src="{{this.Picture}}" alt="Picture"> --}}
+                {{/each}}
+                {{/each}}
+            </p>
+        </li>
+    </ul>
 
-        <form action="/birthday/{{birthday.id}}/edit" method="GET">
-            <button class="button">Edit</button>
-        </form>
-        <form action="/birthday/{{birthday.id}}/delete" method="POST">
-            <button class="button">Delete</button>
-        </form>
+    <form action="/birthday/{{birthday.id}}/edit" method="GET">
+        <button class="button">Edit</button>
+    </form>
+    <form action="/birthday/{{birthday.id}}/delete" method="POST">
+        <button class="button">Delete</button>
+    </form>

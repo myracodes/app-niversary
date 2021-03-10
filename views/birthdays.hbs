@@ -3,16 +3,13 @@
 <div>
     <ul class="birthdays-list">
         {{#each birthdays}}
+        <li>
         <h5>{{this.friendName}} {{birthday.friendLastName}}</h5>
-        <li>
-            <p>
-                <b>Birthday: {{this.birthdayDay}}/{{this.birthdayMonth}}</b> (DD-MM)
-            </p>
-        </li>
-        <li>
             <form action="/birthday/details/{{this.id}}" method="GET">
                 <input type="image" class="birthday-picture" src="{{this.picture}}" alt="friend ficture"></input>
             </form>
+            <p><b>{{this.birthdayDay}}/{{this.birthdayMonth}} (dd-mm)</b></p>
+        <hr>
         </li>
         {{/each}}
     </ul>
