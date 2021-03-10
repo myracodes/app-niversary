@@ -9,7 +9,7 @@ const protectPrivateRoute = require("../middlewares/protectPrivateRoute");
 
 // BIRTHDAYS DASHBOARD
 router.get('/birthdays', protectPrivateRoute, (req, res, next) => {
-    BirthdayModel.find().populate("gifts")
+    BirthdayModel.find().populate("gifts").sort('birthdayMonth').sort('birthdayDay')
         .then((birthdays) => {
             res.render('birthdays.hbs', {
                 birthdays
