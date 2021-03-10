@@ -4,20 +4,16 @@
 {{#unless isLoggedIn}}
 <div>
     <h3>Welcome to app'niversary!</h3>
-    <p> Don't ever miss your friends' birthdays anymore, and store all your gift ideas at the same place!</p>
-    <div>
-    <a href="/signup">Sign up</a> if you're new or <a href="/signin">sign in</a> if you already have an account!
-    </div>
+    <p> Don't ever miss your friends' birthdays anymore, and store all your gift ideas at the same place!
+    <a href="/signup">Sign up</a> if you're new or <a href="/signin">sign in</a> if you already have an account!</p>
 </div>
 {{/unless}}
 
 {{#if isLoggedIn}}
 <div>
     <h2>Welcome back!</h2>
-    <p>We are very happy to see you again!</p>
-    <div>
-    Do you want to look at your <a href="/birthdays">birthdays list</a>?
-    </div>
+    <p>We are very happy to see you again!
+    Do you want to look at your <a href="/birthdays">birthdays list</a>?</p>
 </div>
 {{/if}}
 

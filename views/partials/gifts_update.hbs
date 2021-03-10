@@ -1,7 +1,8 @@
 <h1>Update your gift</h1>
 
-<a href="/gifts">See the list of Gifts</a>
-<a href="/">Back Home</a>
+<a href="/gifts">Back to gifts list</a>
+{{!-- <a href="/">Home</a> --}}
+<hr>
 
 <form action="/gifts/update/{{dbGifts._id}}" method="POST" enctype="multipart/form-data">
 
@@ -35,10 +36,9 @@
     
         {{/each}}
     
-    
     </select> --}}
 
     <br>
-    <button class="gift-create-btn">Update this Gift</button>
+    <button class="gift-create-btn">UPDATE</button>
 
 </form>

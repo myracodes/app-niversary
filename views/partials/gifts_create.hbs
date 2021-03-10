@@ -1,30 +1,30 @@
 <h1>CREATE A NEW GIFT</h1>
 
-<a href="/gifts">See the list of Gifts</a>
-<a href="/">Back Home</a>
-
+<a href="/gifts">Back to gifts list</a>
+{{!-- <a href="/">Home</a> --}}
+<hr>
 <form action="/gifts/create" method="POST" enctype="multipart/form-data">
 
-<label for="name">Gift Name</label>
-<input type="text" name="name" id="name" value="Gift 1">
+<label for="name">Name</label>
+<input type="text" name="name" id="name" placeholder="Add the gift name">
 
 
 <br>
-<label for="price">Estimated price</label>
-<input type="number" name="price" id="price" value="100">
+<label for="price">Price</label>
+<input type="number" name="price" id="price" placeholder="Add the price or price range here">
 
 
 <br>
-<label for="Description">Gift's Description</label>
-<input type="text" name="Description" id="Description" value="Gift Description">
+<label for="Description">Description</label>
+<input type="text" name="Description" id="Description" placeholder="Add a description">
 
 <br>
-<label for="Picture">Picture (optional)</label>
+<label for="Picture">Picture</label>
 <input type="file" name="Picture" id="Gift-Picture">
 
 <br>
-<label for="purchaseLink">purchase Link</label>
-<input type="text" name="purchaseLink" id="purchaseLink">
+<label for="purchaseLink">Buy it</label>
+<input type="text" name="purchaseLink" id="purchaseLink" placeholder="Add a link here">
 
 {{!-- <br>
 <label for="birthdays">Assign Gift To</label>
@@ -39,6 +39,6 @@
 </select> --}}
 
 <br>
-<button class="gift-create-btn">Create Gift</button>
+<button class="gift-create-btn">CREATE</button>
 
 </form>

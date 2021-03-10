@@ -1,22 +1,23 @@
-<h1>{{gift.name}} Details</h1>
+<h1>{{gift.name}}</h1>
 
-<a href="/gifts">See the list of Gifts</a>
-<a href="/">Back Home</a>
-
-<p>PRICE: {{gift.price}}</p>
-<p>DESCRIPTION: {{gift.Description}}</p>
+<a href="/gifts">Back to gifts list</a>
+{{!-- <a href="/">Back Home</a> --}}
+{{#if gif.price}}
+<p>Price: {{gift.price}}€</p>
+{{/if}}
+<p>Description: {{gift.Description}}</p>
 <img src="{{gift.Picture}}" alt="gift-image">
-<p>PURCHASE LINK: <a href="{{gift.purchaseLink}}" target="blank">{{gift.purchaseLink}}</a></p>
-<p>HAS BEEN ALREADY ASSIGNED TO:</p>
+<p>Buy it: <a href="{{gift.purchaseLink}}" target="blank">{{gift.purchaseLink}}</a></p>
+{{!-- <p>This gift is already used in these birthdays:</p>
 <p>
-{{!-- {{#each gift}}
-{{!-- {{#each this.assignTo}}
-{{this}} --}} 
-{{!-- {{this.friendName}} --}}
-{{!-- {{/each}}
-{{/each}} --}}
-</p>
+ {{#each gift}}
+{{#each this.assignTo}}
+{{this}}
+{{this.friendName}}
+{{/each}}
+{{/each}}
+</p> --}}
 
 <form action="/gifts/delete/{{gift.id}}" method="POST">
-    <button>Delete Gift</button>
+    <button>DELETE</button>
 </form>
