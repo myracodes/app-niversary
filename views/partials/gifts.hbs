@@ -1,35 +1,42 @@
-<h1> LIST OF AVAILABLE GIFTS</h1>
+<div class="banner-gifts-list">
+    <img src="/img/blue-banner.jpg" alt="banner" id="banner">
+
+    <div>
+        <h1 class="title-gifts-list"> MY GIFTS LIST</h1>
+    </div>
+</div>
 
 <a href='/gifts/create'>New gift</a>
 {{!-- <a href="/">Home</a> --}}
 
+<div class="gifts-list-wrapper">
+    <div class="gifts-list">
 
-<div class="gifts-list">
-
-    {{#each dbGifts}}
-    <div class="gift-content-container">
-        <div>
-            <img src="{{this.Picture}}" alt="gift-picture" class="gift-picture">
-        </div>
-        <div class="text-gift-container">
-            <h2 class="gift-title">{{this.name}}</h2>
-            <p>{{this.Description}}</p>
-            {{#if this.price}}
-            <p>Price: {{this.price}}€</p>
-            {{/if}}
-            {{!-- <p>ASSIGN TO GOES HERE JUANITO</p> --}}
-            <div class="update-seedetails-delete">
-                <p><a href='/gifts/details/{{this.id}}'>See details </a></p>
-                <p> |</p>
-                <p><a href="/gifts/update/{{this.id}}">Update </a></p>
-                <p> |</p>
-                <form action="/gifts/delete/{{this.id}}" method="POST">
-                    <button class="gift-btn">Delete</button>
-                </form>
+        {{#each dbGifts}}
+        <div class="gift-content-container">
+            <div>
+                <img src="{{this.Picture}}" alt="gift-picture" class="gift-picture">
             </div>
+            <div class="text-gift-container">
+                <h2 class="gift-title">{{this.name}}</h2>
+                <p>{{this.Description}}</p>
+                {{#if this.price}}
+                <p>Price: {{this.price}}€</p>
+                {{/if}}
+                {{!-- <p>ASSIGN TO GOES HERE JUANITO</p> --}}
+                <div class="update-seedetails-delete">
+                    <p><a href='/gifts/details/{{this.id}}'>See details </a></p>
+                    <p> |</p>
+                    <p><a href="/gifts/update/{{this.id}}">Update </a></p>
+                    <p> |</p>
+                    <form action="/gifts/delete/{{this.id}}" method="POST">
+                        <button class="gift-btn">Delete</button>
+                    </form>
+                </div>
 
+            </div>
         </div>
-    </div>
-    {{/each}}
+        {{/each}}
 
+    </div>
 </div>
