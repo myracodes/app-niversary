@@ -4,7 +4,7 @@
     to {background-color: #2d3f3e;}
   }
 
-  @keyframes fondu-button {
+  @keyframes fondu-texte {
     from {color: #2d3f3e;}
     to {color: white;}
   }
