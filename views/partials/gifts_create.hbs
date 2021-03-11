@@ -7,29 +7,18 @@
 </div>
 {{!-- <a href="/gifts">Back to gifts list</a> --}}
 {{!-- <a href="/">Home</a> --}}
+
+<div class="welcome-message">
 <div>
-<hr>
 <form action="/gifts/create" method="POST" enctype="multipart/form-data">
-
 <label for="name">Name</label>
-
 <input type="text" name="name" id="name" placeholder="Add the gift name">
-
-
-<br>
 <label for="price">Price</label>
 <input type="number" name="price" id="price" placeholder="Add the price or price range here">
-
-
-<br>
 <label for="Description">Description</label>
 <input type="text" name="Description" id="Description" placeholder="Add a description">
-
-<br>
 <label for="Picture">Picture</label>
 <input type="file" name="Picture" id="Gift-Picture">
-
-<br>
 <label for="purchaseLink">Buy it</label>
 <input type="text" name="purchaseLink" id="purchaseLink" placeholder="Add a link here">
 
@@ -49,4 +38,5 @@
 <button class="gift-create-btn button">CREATE</button>
 
 </form>
+</div>
 </div>

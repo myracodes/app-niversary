@@ -29,6 +29,7 @@ html {
 
 body {
   font: 14px;
+  padding-left: 160px;
 }
 
 a {
@@ -51,7 +52,7 @@ a:hover {
 .body-container {
   flex-direction: column;
   /* width: 80%; */
-  margin-left: 160px;
+  /* margin-left: 160px; */
 
 }
 

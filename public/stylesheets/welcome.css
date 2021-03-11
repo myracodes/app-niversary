@@ -5,7 +5,8 @@
     padding: 20px;
     font-size: 1.3em;
     height: 100vh;
-    width: 100%;
+    /* width: 100%; */
+    /* margin-left: 160px; */
 }
 
 .never {

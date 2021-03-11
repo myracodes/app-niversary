@@ -5,9 +5,12 @@
         <h1 class="title-gifts-list"> UPDATE YOUR GIFT</h1>
     </div>
 </div>
-<a href="/gifts">Back to gifts list</a>
+
+<div class="welcome-message">
+
+{{!-- <a href="/gifts">Back to gifts list</a> --}}
 {{!-- <a href="/">Home</a> --}}
-<hr>
+
 
 <form action="/gifts/update/{{dbGifts._id}}" method="POST" enctype="multipart/form-data">
 
@@ -47,3 +50,5 @@
     <button class="gift-create-btn">UPDATE</button>
 
 </form>
+
+</div>
