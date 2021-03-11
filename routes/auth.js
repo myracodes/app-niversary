@@ -52,7 +52,7 @@ router.post("/signin", async (req, res, next) => {
       // https://www.youtube.com/watch?v=OFRjZtYs3wY
 
       req.flash("success", "Successfully logged in...");
-      res.redirect("/");
+      res.redirect("/birthdays");
     }
   }
 });
