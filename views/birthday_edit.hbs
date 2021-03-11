@@ -7,28 +7,28 @@
     </div>
     
 <div id="create-birthday-form">
-    <form action="/birthday/{{id}}/edit" method="POST" enctype="multipart/form-data">
+    <form action="/birthday/{{birthday.id}}/edit" method="POST" enctype="multipart/form-data">
         <div class="form-div">
             <label for="friendName">Name</label>
-            <input name="friendName" id="friendName" type="text" value="{{this.friendName}}">
+            <input name="friendName" id="friendName" type="text" value="{{birthday.friendName}}">
         </div>
         <div class="form-div">
             <label for="friendLastName">Last name</label>
-            <input name="friendLastName" id="friendLastName" type="text" value="{{this.friendLastName}}">
+            <input name="friendLastName" id="friendLastName" type="text" value="{{birthday.friendLastName}}">
         </div>
         <div id="birthday">
             <p>Birthday date</p>
             <span>
                 <label for="day"></label>
-                <input name="birthdayDay" type="number" min="1" max="31" value="{{this.birthdayDay}}">
+                <input name="birthdayDay" type="number" min="1" max="31" value="{{birthday.birthdayDay}}">
             </span>
             <span>
                 <label for="month"></label>
-                <input name="birthdayMonth" type="number" min="1" max="12" value="{{this.birthdayMonth}}">
+                <input name="birthdayMonth" type="number" min="1" max="12" value="{{birthday.birthdayMonth}}">
             </span>
             <span>
                 <label for="year"></label>
-                <input name="birthdayYear" type="number" min="1900" max="2050" value="{{this.birthdayYear}}">
+                <input name="birthdayYear" type="number" min="1900" max="2050" value="{{birthday.birthdayYear}}">
                 </select>
             </span>
         </div>
@@ -43,14 +43,14 @@
         </div> --}}
         <div>
             <label for="existing-gifts">Current Gift(s)</label>
-            {{#each gifts}}
+            {{#each birthday.gifts}}
             <p> {{this.name}}</p>
             {{/each}}
         </div>
 
         <div>
             <select name="gifts" id="select-gifts" multiple>
-                {{#each gifts}}
+                {{#each allGifts}}
                 <option value="{{this._id}}">{{this.name}}</option>
                 {{!-- <div>
                     <input type="checkbox" id="{{this.name}}" name="{{this.name}}" checked>
