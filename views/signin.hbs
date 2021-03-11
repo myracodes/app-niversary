@@ -7,14 +7,13 @@
         <h1 class="title-gifts-list"> WELCOME BACK!</h1>
       </div>
     </div>
-    <p>Please fill in your login information:</p>
   </header>
   {{#if msg}}
   <p class="message {{msg.status}}">{{msg.text}}</p>
   {{/if}}
   <form method="post" action="/signin" id="form_user">
     <div>
-      <label for="email">Email</label>
+      <label for="email">E-mail</label>
       <input name="email" id="email" type="email" placeholder="name@mail.com" required>
     </div>
     <div>
