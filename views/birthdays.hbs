@@ -14,7 +14,8 @@
             <form action="/birthday/details/{{this.id}}" method="GET">
                 <input type="image" class="birthday-picture" src="{{this.picture}}" alt="friend ficture"></input>
             </form>
-            <p><b>birthday: {{this.birthdayDay}}/{{this.birthdayMonth}} (dd-mm)</b></p>
+            {{!-- <p><b>birthday: {{this.birthdayDay}}/{{this.birthdayMonth}} (dd-mm)</b></p> --}}
+            <p><b>{{this.birthdayDay}}/{{this.birthdayMonth}}</b></p>
             </div>
         {{/each}}
     </div>
