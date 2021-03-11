@@ -1,61 +1,40 @@
+
+
 <div class="banner-gifts-list">
     <img src="/img/blue-banner.jpg" alt="banner" id="banner">
-
     <div>
         <h1 class="title-gifts-list">{{birthday.friendName}} {{birthday.friendLastName}}</h1>
     </div>
 </div>
-{{!-- <h1>{{birthday.friendName}} {{birthday.friendLastName}}'s birthday details</h1> --}}
-<div class="btn-wrapper" id="btnbirthdaylist">
-<form action="/birthday/{{birthday.id}}/edit" method="GET">
-    <button class="button" id="btn-birthday-details">EDIT</button> 
-</form>
-<form action="/birthday/{{birthday.id}}/delete" method="POST">
-    <button class="button">DELETE</button>
-</form>
+
+<div class="welcome-message">
+
+<div class="btn-wrapper">
+    <form action="/birthday/{{birthday.id}}/edit" method="GET">
+        <button class="button" id="btn-birthday-details">EDIT</button>
+    </form>
+    <form action="/birthday/{{birthday.id}}/delete" method="POST">
+        <button class="button" id="btn-birthday-details">DELETE</button>
+    </form>
 </div>
 
-{{!-- ///// --}}
-
-{{!-- <div class="my-birthdays">
-    <ul class="individual-birthday"> --}}
-        {{!-- <li>
-            <p>
-                <b>Birthday:
-                    {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}} (DD-MM-YYYY)</b>
-            </p>
-        </li> --}}
-        {{!-- <li>
-            <img class="birthday-picture" src="{{birthday.picture}}" alt="friend picture">
-        </li>
-        <li>
-            <p>
-                <b>Gifts: </b> --}}
-                {{!-- {{#each birthday.gifts}}
-                {{this.name}} <br>
-                {{this.price}}€ <br>
-                {{this.Description}} <br>
-                Buy it: {{this.purchaseLink}} <br> --}}
-                {{!-- <img src="{{this.Picture}}" alt="Picture"> --}}
-                {{!-- {{/each}}
-            </p>
-        </li>
-    </ul> --}}
-
-    {{!-- ///// --}}
-
-     
-<div>
-    <img class="birthday-picture" src="{{birthday.picture}}" alt="friend picture">
-</div>
-    <div>
-        Birthday:
-        {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}} </b>
+   <div class="bd-details-picture">
+       <h3 class="white-text">Birthday:
+        {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}}</h3> 
     </div>
 
+    <div class="bd-details-picture">
+        <img class="birthday-picture" id="birthday-picture-details" src="{{birthday.picture}}" alt="friend picture">
+    </div>
+
+ 
+
+    <div class="gifts-list-wrapper">
+    <div class="gifts-list">
+        <h2 class="white-text birthday-details-gift-title">{{birthday.friendName}}'s gifts</h2> 
     {{#each birthday.gifts}}
     <div class="gift-content-container">
-        <div>
+        <div class="bd-details-pic">
             <img src="{{this.Picture}}" alt="gift-picture" class="gift-picture">
         </div>
         <div class="text-gift-container">
@@ -65,24 +44,14 @@
             <p>Price: {{this.price}}€</p>
             {{/if}}
             Purchase link: {{this.purchaseLink}}
-            {{!-- <div class="update-seedetails-delete">
-                <p><a href='/gifts/details/{{this.id}}'>See details </a></p>
-                <p> |</p>
-                <p><a href="/gifts/update/{{this.id}}">Update </a></p>
-                <p> |</p>
-                <form action="/gifts/delete/{{this.id}}" method="POST">
-                    <button class="gift-btn">Delete</button>
-                </form>
-            </div> --}}
 
         </div>
     </div>
-    {{/each}}
-    {{!-- ///// --}}
 
-    {{!-- <form action="/birthday/{{birthday.id}}/edit" method="GET">
-        <button class="button">EDIT</button>
-    </form>
-    <form action="/birthday/{{birthday.id}}/delete" method="POST">
-        <button class="button">DELETE</button>
-    </form> --}}
+    {{/each}}
+   </div>
+</div>
+
+</div>
+
+</div>

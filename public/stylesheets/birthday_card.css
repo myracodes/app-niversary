@@ -33,3 +33,27 @@
     flex-wrap: wrap;
     padding: 0 100px;
 }
+
+.bd-details-pic {
+    display: flex;
+    justify-content: center;
+}
+
+.bd-details-picture {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+#birthday-picture-details {
+    margin: 10px 0;
+}
+
+.white-text {
+    color: white;
+}
+
+.birthday-details-gift-title {
+    font-size: 1.1em;
+}
