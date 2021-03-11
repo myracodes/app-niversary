@@ -17,7 +17,6 @@
   margin: 0 0px 1px 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  /* color: white; */
   font-size: inherit;
 }
 
@@ -28,9 +27,7 @@ html {
 }
 
 body {
-  /* padding: 40px; */
   font: 14px;
-  /* background-color: rgba(0, 0, 0, 0.26); */
 }
 
 a {
@@ -67,10 +64,12 @@ a:hover {
 
 h1, h2 {
   color: #2d3f3e;
-  /* padding: 40px 60px; */
   align-self: flex-start;
   justify-self: flex-start;
-  /* margin-bottom: 180px; */
   font-size: 1.8rem;
   z-index: 10;
+}
+
+.flex-horizontal {
+  flex-direction: row;
 }
