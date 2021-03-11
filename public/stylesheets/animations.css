@@ -1,5 +1,10 @@
 
-@keyframes fondu {
+@keyframes fondu-button {
     from {background-color: #83b4b1;}
     to {background-color: #2d3f3e;}
+  }
+
+  @keyframes fondu-button {
+    from {color: #2d3f3e;}
+    to {color: white;}
   }

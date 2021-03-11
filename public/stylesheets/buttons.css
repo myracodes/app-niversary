@@ -1,27 +1,18 @@
-.button {
+.button, button {
     width: 200px;
     padding: 8px ;
     background-color:  #a2c4c9;
-    /* border-radius: .3rem; */
-    border: solid 1px white;
-<<<<<<< HEAD
+    border: 0px;
     color: #2d3f3e;
-=======
-    /* border: solid 1px #83b4b1; */
-    /* display: flex;
-    justify-content: center; */
-
->>>>>>> b065b624238929b55e1fc4b1c6de00113808b2fd
+    text-align: center;
 }
 
 .button:hover {
     background-color: #2d3f3e;
-    color: white;
+    /* color: white; */
     font-size: 16px;
-<<<<<<< HEAD
-    animation-name: fondu;
-    animation-duration: 1s;
-=======
+    animation: fondu-button 2s, fondu-texte 1s;
+    /* animation-duration: 1s; */
 }
 
 .text-btn {
@@ -39,5 +30,4 @@
 
 #btnbirthdaylist {
     margin-bottom: 30px;
->>>>>>> b065b624238929b55e1fc4b1c6de00113808b2fd
 }
