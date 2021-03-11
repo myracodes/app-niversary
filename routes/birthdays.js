@@ -53,15 +53,31 @@ router.post("/birthday/create", fileUploader.single('picture'), async (req, res,
 });
 
 // UPDATE BIRTHDAY
+
 router.get("/birthday/:id/edit", protectPrivateRoute, (req, res, next) => {
-    BirthdayModel.findByIdAndUpdate(req.params.id)
+    BirthdayModel.findByIdAndUpdate(req.params.id).populate("gifts")
         .then((birthday) => {
+            console.log(birthday);
             res.render("birthday_edit.hbs", birthday);
         })
         .catch((err) => {
             console.log(err)
         });
 });
+
+// router.get("/birthday/:id/edit", protectPrivateRoute, (req, res, next) => {
+//   GiftModel.find()
+//     .then((gifts) => {
+//         console.log(gifts);
+//       res.render("birthday_edit.hbs", {
+//         gifts,
+//       });
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// });
+
 
 router.post("/birthday/:id/edit", fileUploader.single('picture'), (req, res, next) => {
     const newBirthday = {
