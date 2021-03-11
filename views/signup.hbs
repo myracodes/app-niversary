@@ -8,35 +8,35 @@
 
 <section class="sign form-container">
   <header class="form-header">
-    {{!-- <p class="form-subtitle">Please fill in your account information:</p> --}}
   </header>
   {{#if msg}}
   <p class="message {{msg.status}}">{{msg.text}}</p>
   {{/if}}
   <form method="post" action="/signup" id="form_user">
     <div>
-      <label for="firstname" class="label">First name*</label>
-      <input name="name" id="name" type="text" class="input-text input" placeholder="" required value="">
+      <label for="firstname">First name*</label>
+      <input name="name" id="name" type="text" class="input-text input" placeholder="Your first name" required>
     </div>
     <div>
-      <label for="lastname" class="label">Last name*</label>
-      <input name="lastname" id="lastname" type="text" class="input-text input" placeholder="" required value="">
+      <label for="lastname">Last name*</label>
+      <input name="lastname" id="lastname" type="text" class="input-text input" placeholder="Your last name" required>
     </div>
     <div>
-      <label for="email" class="label">E-mail*</label>
-      <input name="email" id="email" type="email" class="input-text input" placeholder="" required value="">
+      <label for="email">E-mail*</label>
+      <input name="email" id="email" type="email" class="input-text input" placeholder="Your e-mail" required>
     </div>
     <div>
-      <label for="password" class="label">Password*</label>
-      <input name="password" id="password" type="password" class="input-text input" placeholder="" required value="">
+      <label for="password">Password*</label>
+      <input name="password" id="password" type="password" class="input-text input" placeholder="Your password" required>
     </div>
     <div>
-      <label for="profile-picture" class="label">Profile picture</label>
+      <label for="profile-picture">Profile picture</label>
       <input type="file" name="picture" id="profile-picture" />
     </div>
     <p class="asterisk">* Mandatory fields</p>
-    <button class="button-primary white">Create Account</button>
+    <button class="button-primary white">Create account</button>
   </form>
-    <p class="form-sub-infos flex-horizontal">Already have an account ? <a href="/signin" class="button-link-form">Sign In</a></p>
-
+  <p class="form-sub-infos flex-horizontal">Already have an account ?&nbsp;
+    <a href="/signin" class="button-link-form">Sign In</a>
+  </p>
 </section>
