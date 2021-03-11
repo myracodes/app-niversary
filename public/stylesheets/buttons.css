@@ -9,9 +9,9 @@
 
 .button:hover {
     background-color: #2d3f3e;
-    /* color: white; */
+    color: white;
     font-size: 16px;
-    animation: fondu-button 2s, fondu-texte 1s;
+    /* animation: fondu-button 0.5s, fondu-texte 0.5s; */
     /* animation-duration: 1s; */
 }
 

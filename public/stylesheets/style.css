@@ -15,7 +15,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin: 0 0px 8px 0;
+  margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   font-size: inherit;
@@ -41,7 +41,6 @@ a:hover {
 }
 
 .full-container {
-  
   flex-direction: row;
   /* justify-content: space-between; */
   /* max-width: 800px; */
@@ -58,6 +57,15 @@ a:hover {
 
 #banner {
   /* position: fixed; */
+  object-fit: cover;
+  width: 100%;
+  /* max-width: 600px; */
+  /* z-index: -1; */
+}
+
+.banner {
+  /* position: fixed; */
+  object-fit: cover;
   width: 100%;
   /* max-width: 600px; */
   /* z-index: -1; */
