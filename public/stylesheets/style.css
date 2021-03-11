@@ -3,6 +3,7 @@
 @import './birthday_card.css';
 @import './buttons.css';
 @import './gift_card.css';
+@import './welcome.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* font-family: 'Poppins', sans-serif; */
@@ -42,15 +43,18 @@ a:hover {
 }
 
 .full-container {
+  
   flex-direction: row;
   /* justify-content: space-between; */
   /* max-width: 800px; */
   justify-content: center;
+  
 }
 
 .body-container {
   flex-direction: column;
   /* width: 80%; */
+  margin-left: 160px;
 
 }
 
