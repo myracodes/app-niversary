@@ -6,13 +6,14 @@
     </div>
 </div>
 {{!-- <h1>{{birthday.friendName}} {{birthday.friendLastName}}'s birthday details</h1> --}}
-
+<div class="btn-wrapper" id="btnbirthdaylist">
 <form action="/birthday/{{birthday.id}}/edit" method="GET">
-    <button class="button">EDIT</button>
+    <button class="button" id="btn-birthday-details">EDIT</button> 
 </form>
 <form action="/birthday/{{birthday.id}}/delete" method="POST">
     <button class="button">DELETE</button>
 </form>
+</div>
 
 {{!-- ///// --}}
 
