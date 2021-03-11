@@ -4,11 +4,8 @@
     <div>
         <h1 class="title-gifts-list"> EDIT BIRTHDAY</h1>
     </div>
-
-<h2>Edit this birthday</h2>
 <div id="create-birthday-form">
     <form action="/birthday/{{id}}/edit" method="POST" enctype="multipart/form-data">
-        <h3>Add a new birthday to your dashboard!</h3>
         <div class="form-div">
             <label for="friendName">Name</label>
             <input name="friendName" id="friendName" type="text" value="{{this.friendName}}">
@@ -37,27 +34,17 @@
             <label for="picture">Picture</label>
             <input name="picture" id="picture" type="file">
         </div>
-        {{!-- <div>
-            <label for="gift">Create a new gift</label>
-            <input name="gift" id="gift" type="text" value="{{this.}}">
-        </div> --}}
-        {{!-- <div>
+        <div>
             <label for="gift">Gift(s)</label>
             <select name="gift" id="gift"></select>
             <option value="-1">Choose a gift</option>
-        </div> --}}
-        {{!-- <div>
+        </div>
+        <div>
             <label for="existing-gifts">Gift(s)</label>
             {{> gifts_select}}
-        </div> --}}
+        </div>
         <button class="button">
             SAVE
         </button>
     </form>
-</div>
-<div>
-    <h5>Create a new gift!</h5>
-    <div class="form-div" id="create-gift-form">
-        {{> gifts_create}}
-    </div>
 </div>
