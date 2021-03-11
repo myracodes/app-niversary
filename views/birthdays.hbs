@@ -5,19 +5,31 @@
         <h1 class="title-gifts-list"> MY BIRTHDAYS</h1>
     </div>
 </div>
+<div class="btn-wrapper" id="btnbirthdaylist">
+    <div>
+        <button class="button">
+            <div class="text-btn">Add birthday</div>
+        </button>
+    </div>
+</div>
 
 <div class="birthday-wrapper">
     <div class="birthdays-list">
         {{#each birthdays}}
         <div class="birthdays-content-container">
-            <p><b>{{this.birthdayDay}}/{{this.birthdayMonth}}</b></p>
-        
-            <form action="/birthday/details/{{this.id}}" method="GET">
-                <input type="image" class="birthday-picture" src="{{this.picture}}" alt="friend ficture"></input>
-            </form>
-            {{!-- <p><b>birthday: {{this.birthdayDay}}/{{this.birthdayMonth}} (dd-mm)</b></p> --}}
-            <h5>{{this.friendName}} {{birthday.friendLastName}}</h5>
+            <div>
+                <p><b>{{this.birthdayDay}}/{{this.birthdayMonth}}</b></p>
             </div>
+            <div>
+                <form action="/birthday/details/{{this.id}}" method="GET">
+                    <input type="image" class="birthday-picture" src="{{this.picture}}" alt="friend ficture"></input>
+                </form>
+            </div>
+            <div>
+                {{!-- <p><b>birthday: {{this.birthdayDay}}/{{this.birthdayMonth}} (dd-mm)</b></p> --}}
+                <h5>{{this.friendName}} {{birthday.friendLastName}}</h5>
+            </div>
+        </div>
         {{/each}}
     </div>
 </div>

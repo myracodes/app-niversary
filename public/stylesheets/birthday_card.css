@@ -4,7 +4,7 @@
     /* border-radius: 50%; */
     /* border: solid white 2px; */
     /* padding: 0 5px; */
-    margin: 10px;
+    margin: 0 10px;
 }
 
 .birthday-container {
@@ -18,8 +18,10 @@
     color:#000000 ;
     color: #2d3f3e ; 
     background-color: #a2c4c9;
-    align-items: center;
-    margin: 10px 10px;
+    align-items:center;
+    justify-content: space-around;
+    margin: 0 10px 20px 10px;
+    
     
 
     
