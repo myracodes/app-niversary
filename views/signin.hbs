@@ -1,12 +1,12 @@
 <section>
   <header>
     <div class="banner-gifts-list">
-    <img src="/img/blue-banner.jpg" alt="banner" id="banner">
+      <img src="/img/blue-banner.jpg" alt="banner" id="banner">
 
-    <div>
+      <div>
         <h1 class="title-gifts-list"> WELCOME BACK!</h1>
+      </div>
     </div>
-</div>
     <p>Please fill in your login information:</p>
   </header>
   {{#if msg}}
@@ -15,11 +15,11 @@
   <form method="post" action="/signin" id="form_user">
     <div>
       <label for="email">Email</label>
-      <input name="email" id="email" type="email" placeholder="name@mail.com" required value="foo@foo.foo">
+      <input name="email" id="email" type="email" placeholder="name@mail.com" required>
     </div>
     <div>
-      <label  for="password">Password</label>
-      <input name="password" id="password" type="password"  placeholder="password" required value="foo">
+      <label for="password">Password</label>
+      <input name="password" id="password" type="password" placeholder="password" required>
     </div>
     <button class="button">Log in</button>
   </form>
