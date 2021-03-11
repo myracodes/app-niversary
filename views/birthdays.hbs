@@ -10,12 +10,13 @@
     <div class="birthdays-list">
         {{#each birthdays}}
         <div class="birthdays-content-container">
-        <h5>{{this.friendName}} {{birthday.friendLastName}}</h5>
+            <p><b>{{this.birthdayDay}}/{{this.birthdayMonth}}</b></p>
+        
             <form action="/birthday/details/{{this.id}}" method="GET">
                 <input type="image" class="birthday-picture" src="{{this.picture}}" alt="friend ficture"></input>
             </form>
             {{!-- <p><b>birthday: {{this.birthdayDay}}/{{this.birthdayMonth}} (dd-mm)</b></p> --}}
-            <p><b>{{this.birthdayDay}}/{{this.birthdayMonth}}</b></p>
+            <h5>{{this.friendName}} {{birthday.friendLastName}}</h5>
             </div>
         {{/each}}
     </div>
