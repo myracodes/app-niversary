@@ -6,34 +6,82 @@
     </div>
 </div>
 {{!-- <h1>{{birthday.friendName}} {{birthday.friendLastName}}'s birthday details</h1> --}}
-<div class="my-birthdays">
-    <ul class="individual-birthday">
-        <li>
+
+<form action="/birthday/{{birthday.id}}/edit" method="GET">
+    <button class="button">EDIT</button>
+</form>
+<form action="/birthday/{{birthday.id}}/delete" method="POST">
+    <button class="button">DELETE</button>
+</form>
+
+{{!-- ///// --}}
+
+{{!-- <div class="my-birthdays">
+    <ul class="individual-birthday"> --}}
+        {{!-- <li>
             <p>
                 <b>Birthday:
                     {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}} (DD-MM-YYYY)</b>
             </p>
-        </li>
-        <li>
+        </li> --}}
+        {{!-- <li>
             <img class="birthday-picture" src="{{birthday.picture}}" alt="friend picture">
         </li>
         <li>
             <p>
-                <b>Gifts: </b>
-                {{#each birthday.gifts}}
+                <b>Gifts: </b> --}}
+                {{!-- {{#each birthday.gifts}}
                 {{this.name}} <br>
                 {{this.price}}€ <br>
                 {{this.Description}} <br>
-                Buy it: {{this.purchaseLink}} <br>
-                <img src="{{this.Picture}}" alt="Picture">
-                {{/each}}
+                Buy it: {{this.purchaseLink}} <br> --}}
+                {{!-- <img src="{{this.Picture}}" alt="Picture"> --}}
+                {{!-- {{/each}}
             </p>
         </li>
-    </ul>
+    </ul> --}}
 
-    <form action="/birthday/{{birthday.id}}/edit" method="GET">
+    {{!-- ///// --}}
+
+     
+<div>
+    <img class="birthday-picture" src="{{birthday.picture}}" alt="friend picture">
+</div>
+    <div>
+        Birthday:
+        {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}} </b>
+    </div>
+
+    {{#each birthday.gifts}}
+    <div class="gift-content-container">
+        <div>
+            <img src="{{this.Picture}}" alt="gift-picture" class="gift-picture">
+        </div>
+        <div class="text-gift-container">
+            <h2 class="gift-title">{{this.name}}</h2>
+            <p>{{this.Description}}</p>
+            {{#if this.price}}
+            <p>Price: {{this.price}}€</p>
+            {{/if}}
+            Purchase link: {{this.purchaseLink}}
+            {{!-- <div class="update-seedetails-delete">
+                <p><a href='/gifts/details/{{this.id}}'>See details </a></p>
+                <p> |</p>
+                <p><a href="/gifts/update/{{this.id}}">Update </a></p>
+                <p> |</p>
+                <form action="/gifts/delete/{{this.id}}" method="POST">
+                    <button class="gift-btn">Delete</button>
+                </form>
+            </div> --}}
+
+        </div>
+    </div>
+    {{/each}}
+    {{!-- ///// --}}
+
+    {{!-- <form action="/birthday/{{birthday.id}}/edit" method="GET">
         <button class="button">EDIT</button>
     </form>
     <form action="/birthday/{{birthday.id}}/delete" method="POST">
         <button class="button">DELETE</button>
-    </form>
+    </form> --}}
