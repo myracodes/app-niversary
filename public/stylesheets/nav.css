@@ -3,7 +3,8 @@
 }
 
 .logo {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* .nav-container {
@@ -23,6 +24,9 @@
     /* width: 250px; */
 }
 
+.signInUpNav{
+    margin-bottom: 20px;
+}
 
 .nav-container {
     position: fixed;
@@ -39,5 +43,5 @@
 }
 
 .img-logo {
-    width: 60px;
+    width: 140px;
 }
