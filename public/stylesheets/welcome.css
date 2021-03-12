@@ -59,3 +59,7 @@
 #green {
     background-color: #b6d7a8;
 }
+
+.max-size-intro-title-text {
+    max-width: 800px;
+}
