@@ -63,10 +63,7 @@ router.get("/gifts/update/:id", protectPrivateRoute, (req, res, next) => {
             GiftModel.findById(req.params.id)
                 .populate('birthdays')
                 .then((dbGifts) => {
-                    res.render("partials/gifts_update", {
-                        dbGifts,
-                        allBirthdays
-                    })
+                    res.render("partials/gifts_update", {dbGifts, allBirthdays })
                 })
                 .catch((err) => {
                     console.log(err);
