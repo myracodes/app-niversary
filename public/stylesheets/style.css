@@ -84,3 +84,8 @@ h1, h2 {
 .flex-horizontal {
   flex-direction: row;
 }
+
+/* .centered-item {
+  align-items: center;
+  text-align: center;
+} */

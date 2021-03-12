@@ -6,14 +6,15 @@
     </div>
 </div>
 
-{{#unless isLoggedIn}}
+{{!-- {{#unless isLoggedIn}} --}}
 <div class="welcome-message-wrapper">
     <div class="welcome-message">
 
         <div>
             <p>APP'niversary gives you all the tools you need to always remember the birthdays of the people you care
                 for and gather the best gifts ideas for them.</p>
-                {{!-- SUGGESTION de modif plus courte : APP'niversary helps you keeping track of all your birthdays and gift ideas for the people you care for! --}}
+            {{!-- SUGGESTION de modif plus courte : APP'niversary helps you keeping track of all your birthdays and gift
+            ideas for the people you care for! --}}
         </div>
 
         <div class="argument-wrapper">
@@ -33,16 +34,10 @@
         <div class="never-again">
             <p class="never">Never forget a birthday again!</p>
         </div><br>
+        {{#unless isLoggedIn}}
         <div class="button"><a href="/signup">Sign up</a></div>
         <p class="never flex-horizontal">Already have an account?&nbsp;<a href="/signin">Sign in</a></p>
+        {{/unless}}
     </div>
 </div>
-{{/unless}}
-
-{{#if isLoggedIn}}
-<div>
-    <h2>Welcome back!</h2>
-    <p>We are very happy to see you again!
-        Do you want to look at your <a href="/birthdays">birthdays list</a>?</p>
-</div>
-{{/if}}
+{{!-- {{/unless}} --}}
