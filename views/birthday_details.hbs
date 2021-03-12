@@ -23,8 +23,10 @@
 
     <div class="bd-details-picture">
         <img class="birthday-picture" id="birthday-picture-details" src="{{birthday.picture}}" alt="friend picture">
-    </div>
 
+    </div>
+    <p>Birthday message:<br>{{birthday.birthdayMessage}}</p>
+    
     <div class="gifts-list-wrapper">
         <div class="gifts-list">
             <h2 class="white-text birthday-details-gift-title">{{birthday.friendName}}'s gifts</h2>
@@ -40,14 +42,11 @@
                     <p>Price: {{this.price}}€</p>
                     {{/if}}
                     Purchase link: {{this.purchaseLink}}
-                    <div class="form-div">
-                        <p>Birthday message:{{this.birthdayMessage}}</p>
-                    </div>
                 </div>
             </div>
             {{/each}}
         </div>
-     </div>
     </div>
-    {{!-- balise suivante toute seule ??? à supprimer après la démo ? --}}
+</div>
+{{!-- balise suivante toute seule ??? à supprimer après la démo ? --}}
 </div>
