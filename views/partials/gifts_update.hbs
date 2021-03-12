@@ -13,25 +13,19 @@
 
 
 <form action="/gifts/update/{{dbGifts._id}}" method="POST" enctype="multipart/form-data">
-
+<h2 class="white-text">Update your gift!</h2>
     <label for="name">Gift Name</label>
     <input type="text" name="name" id="name" value="{{dbGifts.name}}">
 
-
-    <br>
     <label for="price">Estimated price</label>
     <input type="number" name="price" id="price" value="{{dbGifts.price}}">
 
-
-    <br>
     <label for="Description">Gift's Description</label>
     <input type="text" name="Description" id="Description" value="{{dbGifts.Description}}">
 
-    <br>
     <label for="Picture">Picture (optional)</label>
     <input type="file" name="Picture" id="Gift-Picture">
 
-    <br>
     <label for="purchaseLink">purchase Link</label>
     <input type="text" name="purchaseLink" id="purchaseLink" value="{{dbGifts.purchaseLink}}">
 
@@ -46,7 +40,6 @@
     
     </select> --}}
 
-    <br>
     <button class="gift-create-btn">UPDATE</button>
 
 </form>

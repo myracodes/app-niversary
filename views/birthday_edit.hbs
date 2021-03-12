@@ -7,9 +7,14 @@
     </div>
 
     <div class="welcome-message">
-        
+
 <div id="create-birthday-form">
     <form action="/birthday/{{birthday.id}}/edit" method="POST" enctype="multipart/form-data">
+    <div><img class="birthday-picture" src="{{birthday.picture}}" alt=""></div>
+        <div class="form-div">
+            <label for="picture">Picture</label>
+            <input name="picture" id="picture" type="file">
+        </div>
         <div class="form-div">
             <label for="friendName">Name</label>
             <input name="friendName" id="friendName" type="text" value="{{birthday.friendName}}">
@@ -34,10 +39,7 @@
                 </select>
             </span>
         </div>
-        <div class="form-div">
-            <label for="picture">Picture</label>
-            <input name="picture" id="picture" type="file">
-        </div>
+        
         {{!-- <div>
             <label for="gift">Gift(s)</label>
             <select name="gift" id="gift"></select>
@@ -49,7 +51,7 @@
             <p> {{this.name}}</p>
             {{/each}}
         </div>
-
+<label for="existing-gifts">Update gifts list</label>
         <div>
             <select name="gifts" id="select-gifts" multiple>
                 {{#each allGifts}}
