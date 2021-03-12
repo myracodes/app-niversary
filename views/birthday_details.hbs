@@ -1,5 +1,3 @@
-
-
 <div class="banner-gifts-list">
     <img src="/img/thinner-ban.jpg" alt="banner" id="banner">
     <div>
@@ -9,49 +7,47 @@
 
 <div class="welcome-message">
 
-<div class="btn-wrapper">
-    <form action="/birthday/{{birthday.id}}/edit" method="GET">
-        <button class="button" id="btn-birthday-details">EDIT</button>
-    </form>
-    <form action="/birthday/{{birthday.id}}/delete" method="POST">
-        <button class="button" id="btn-birthday-details">DELETE</button>
-    </form>
-</div>
+    <div class="btn-wrapper">
+        <form action="/birthday/{{birthday.id}}/edit" method="GET">
+            <button class="button" id="btn-birthday-details">EDIT</button>
+        </form>
+        <form action="/birthday/{{birthday.id}}/delete" method="POST">
+            <button class="button" id="btn-birthday-details">DELETE</button>
+        </form>
+    </div>
 
-   <div class="bd-details-picture">
-       <h3 class="white-text">Birthday:
-        {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}}</h3> 
+    <div class="bd-details-picture">
+        <h3 class="white-text">Birthday:
+            {{birthday.birthdayDay}}/{{birthday.birthdayMonth}}/{{birthday.birthdayYear}}</h3>
     </div>
 
     <div class="bd-details-picture">
         <img class="birthday-picture" id="birthday-picture-details" src="{{birthday.picture}}" alt="friend picture">
     </div>
 
- 
-
     <div class="gifts-list-wrapper">
-    <div class="gifts-list">
-        <h2 class="white-text birthday-details-gift-title">{{birthday.friendName}}'s gifts</h2> 
-    {{#each birthday.gifts}}
-    <div class="gift-content-container">
-        <div class="bd-details-pic">
-            <img src="{{this.Picture}}" alt="gift-picture" class="gift-picture">
+        <div class="gifts-list">
+            <h2 class="white-text birthday-details-gift-title">{{birthday.friendName}}'s gifts</h2>
+            {{#each birthday.gifts}}
+            <div class="gift-content-container">
+                <div class="bd-details-pic">
+                    <img src="{{this.Picture}}" alt="gift-picture" class="gift-picture">
+                </div>
+                <div class="text-gift-container">
+                    <h2 class="gift-title">{{this.name}}</h2>
+                    <p>{{this.Description}}</p>
+                    {{#if this.price}}
+                    <p>Price: {{this.price}}€</p>
+                    {{/if}}
+                    Purchase link: {{this.purchaseLink}}
+                    <div class="form-div">
+                        <p>Birthday message:{{this.birthdayMessage}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
         </div>
-        <div class="text-gift-container">
-            <h2 class="gift-title">{{this.name}}</h2>
-            <p>{{this.Description}}</p>
-            {{#if this.price}}
-            <p>Price: {{this.price}}€</p>
-            {{/if}}
-            Purchase link: {{this.purchaseLink}}
-
-        </div>
+     </div>
     </div>
-
-    {{/each}}
-   </div>
-</div>
-
-</div>
-
+    {{!-- balise suivante toute seule ??? à supprimer après la démo ? --}}
 </div>
