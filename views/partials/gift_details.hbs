@@ -10,22 +10,18 @@
 
 <a href="/gifts">Back to gifts list</a>
 {{!-- <a href="/">Back Home</a> --}}
+ <div class="gift-content-container">
+     <div class="bd-details-pic">
+<img src="{{gift.Picture}}" alt="gift-image" class="gift-picture">
+</div>
+<div class="text-gift-container">
 {{#if gif.price}}
 <p>Price: {{gift.price}}€</p>
 {{/if}}
 <p>Description: {{gift.Description}}</p>
-<img src="{{gift.Picture}}" alt="gift-image">
 <p>Buy it: <a href="{{gift.purchaseLink}}" target="blank">{{gift.purchaseLink}}</a></p>
-{{!-- <p>This gift is already used in these birthdays:</p>
-<p>
-    {{#each gift}}
-    {{#each this.assignTo}}
-    {{this}}
-    {{this.friendName}}
-    {{/each}}
-    {{/each}}
-</p> --}}
-
+</div>
+</div>
 <form action="/gifts/delete/{{gift.id}}" method="POST">
     <button>DELETE</button>
 </form>
