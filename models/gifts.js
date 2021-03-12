@@ -19,10 +19,6 @@ const giftSchema = new Schema({
   ],
 });
 
-
 const GiftModel = mongoose.model("gifts", giftSchema);
-
-
-
 
 module.exports = GiftModel;

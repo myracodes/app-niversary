@@ -32,19 +32,19 @@
 <br>
 <label for="purchaseLink">Buy it</label>
 <input type="text" name="purchaseLink" id="purchaseLink" placeholder="Add a link here">
-
-{{!-- <br>
-<label for="birthdays">Assign Gift To</label>
-<select name="assignTo" id="birthdays" multiple>
+{{!--  --}}
+<br>
+<label for="assignTo">Assign gift to</label>
+<select name="assignTo" id="assignTo" multiple>
     {{#each birthdays}}
 
-    <option value="{{this.id}}"> {{this.friendName}} {{this.friendLastName}}</option>
+    <option value="{{this._id}}">{{this.friendName}} {{this.friendLastName}}</option>
 
     {{/each}}
 
 
-</select> --}}
-
+</select>
+{{!--  --}}
 <br>
 <button class="gift-create-btn button">CREATE</button>
 

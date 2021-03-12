@@ -17,7 +17,7 @@ router.get("/birthdays", protectPrivateRoute, (req, res, next) => {
       });
     })
     .catch((error) => {
-      console.log(error, "error with tag enregistrement");
+      console.log(error, "error");
     });
 });
 
@@ -26,7 +26,7 @@ router.get("/birthday/create", protectPrivateRoute, (req, res, next) => {
   GiftModel.find()
     .then((gifts) => {
       res.render("birthday_create.hbs", {
-        gifts,
+        gifts
       });
     })
     .catch((error) => {
@@ -35,9 +35,7 @@ router.get("/birthday/create", protectPrivateRoute, (req, res, next) => {
   // console.log('-------------post create GET');
 });
 
-router.post(
-  "/birthday/create",
-  fileUploader.single("picture"),
+router.post("/birthday/create", fileUploader.single("picture"),
   async (req, res, next) => {
     console.log("-------------POST create");
     const newBirthday = {

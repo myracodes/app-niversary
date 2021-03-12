@@ -32,16 +32,16 @@
     <label for="purchaseLink">purchase Link</label>
     <input type="text" name="purchaseLink" id="purchaseLink" value="{{dbGifts.purchaseLink}}">
 
-    {{!-- <br>
     <label for="birthdays">Assign Gift To</label>
-    <select name="assignTo" id="birthdays" multiple>
-        {{#each birthdays}}
-    
-        <option value="{{this.id}}"> {{this.friendName}} {{this.friendLastName}}</option>
-    
-        {{/each}}
-    
-    </select> --}}
+<select name="assignTo" id="birthdays" multiple>
+    {{#each birthdays}}
+
+    <option value="{{this.id}}"> {{this.friendName}} {{this.friendLastName}}</option>
+
+    {{/each}}
+
+
+</select>
 
     <br>
     <button class="gift-create-btn">UPDATE</button>
